@@ -1,0 +1,71 @@
+---------------------------------------------------------------
+[ 2017-10-06T09:55:31+08:00 ] 120.25.71.185 60.184.160.122 GET /index.php/index/weixin/getshopcode.html
+[ info ] lunwen.jiezanke.com/index.php/index/weixin/getshopcode.html [运行时间：0.025389s][吞吐率：39.39req/s] [内存消耗：1,388.91kb] [文件加载：45]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'weixin',
+    2 => 'getshopcode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0_1 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Mobile/15A402 MicroMessenger/6.5.18 NetType/WIFI Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Weixin->getshopcode[ D:\WebTest\lunwen\lunwen\app\index\controller\Weixin.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-06T09:55:33+08:00 ] 120.25.71.185 60.184.160.122 GET /index.php/index/index/shop.html?code=07156k6T0umQzV1eh67T0eja6T056k6M&state=123
+[ info ] lunwen.jiezanke.com/index.php/index/index/shop.html?code=07156k6T0umQzV1eh67T0eja6T056k6M&state=123 [运行时间：1.075126s][吞吐率：0.93req/s] [内存消耗：2,077.66kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'shop',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0_1 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Mobile/15A402 MicroMessenger/6.5.18 NetType/WIFI Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'code' => '07156k6T0umQzV1eh67T0eja6T056k6M',
+  'state' => '123',
+)
+[ info ] [ RUN ] app\index\controller\Index->shop[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\shop.html [ array (
+  0 => 'goods',
+  1 => 'num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  (  flag = 1 ) ORDER BY ID desc LIMIT 6 [ RunTime:0.000976s ]

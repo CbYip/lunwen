@@ -1,0 +1,17 @@
+---------------------------------------------------------------
+[ 2017-11-17T01:58:10+08:00 ] 120.25.71.185 123.125.143.31 GET /admin.php/index/table/order_list.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011719s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` ORDER BY ID desc LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-17T04:46:56+08:00 ] 120.25.71.185 163.177.13.2 HEAD /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-17T06:20:35+08:00 ] 120.25.71.185 140.205.201.47 GET /index.php?m=wap&a=index&siteid=1
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-17T10:55:59+08:00 ] 120.25.71.185 112.96.179.3 GET /index.php/index/index/order.html?code=0716qhYm1uXW7j0KsnXm1rSDYm16qhYT&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001954s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.028321s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.023438s ]

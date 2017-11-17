@@ -1,0 +1,264 @@
+---------------------------------------------------------------
+[ 2017-11-13T09:50:42+08:00 ] 120.25.71.185 113.96.219.250 GET /index.php/index/index/shop.html?code=001aZlSP0omMVb2RSGUP0LLDSP0aZlSp&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.019530s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwi3scCz1HSxfpWAWYOxGwaY' LIMIT 1 [ RunTime:0.031248s ]
+---------------------------------------------------------------
+[ 2017-11-13T09:50:44+08:00 ] 120.25.71.185 113.96.219.250 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1462741 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T09:50:54+08:00 ] 120.25.71.185 120.204.17.67 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1534262 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T09:51:29+08:00 ] 120.25.71.185 113.96.219.250 GET /index.php/index/index/contact.html?code=081yNbU41IW71M1yVrR41jcmU41yNbUF&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012695s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.037107s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.001953s ]
+---------------------------------------------------------------
+[ 2017-11-13T09:51:53+08:00 ] 120.25.71.185 113.96.219.250 GET /index.php/index/index/contact.html?code=0112d6L20kI3nC1rGvI204x9L202d6L5&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T10:26:46+08:00 ] 120.25.71.185 36.23.92.17 GET /admin.php/index/table/order_list.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.037111s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` ORDER BY ID desc LIMIT 0,10 [ RunTime:0.019532s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:14:33+08:00 ] 120.25.71.185 183.249.218.235 GET /admin.php/index/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019530s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.027342s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` [ RunTime:0.020506s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.030272s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` [ RunTime:0.018553s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.030271s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.056637s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` [ RunTime:0.022460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.035154s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  (  ID=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_weixin` [ RunTime:0.027342s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_weixin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY score desc LIMIT 8 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.076167s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_keywords` [ RunTime:0.041013s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_keywords` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:14:40+08:00 ] 120.25.71.185 183.249.218.235 POST /admin.php/index/login/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_admin` [ RunTime:0.039060s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_admin` WHERE  `acount` = 'admin'  AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:14:42+08:00 ] 120.25.71.185 183.249.218.235 GET /admin.php/index/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  (  ID=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_weixin` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_weixin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY score desc LIMIT 8 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_keywords` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_keywords` [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:15:49+08:00 ] 120.25.71.185 183.249.218.235 POST /admin.php/index/index/keywords.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_keywords` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] UPDATE `jzk_keywords`  SET `keywords`='8',`content`='转发往期精彩里的图文到朋友圈即可获得100元论文服务抵用券一张。凭截图联系客服号（lunwen）索取或在本公众号回复email地址，我们稍后发送，谢谢。'  WHERE  `id` = 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:15:50+08:00 ] 120.25.71.185 183.249.218.235 GET /admin.php/index/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  (  ID=1 ) LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_weixin` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_weixin` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY score desc LIMIT 8 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_keywords` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_keywords` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:19:49+08:00 ] 120.25.71.185 58.247.212.98 GET /admin.php/index/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011719s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  (  ID=1 ) LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_weixin` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_weixin` [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY score desc LIMIT 8 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_keywords` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_keywords` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:37:00+08:00 ] 120.25.71.185 183.249.218.235 GET /admin.php/index/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012694s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  (  ID=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_weixin` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_weixin` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY score desc LIMIT 8 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_keywords` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_keywords` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:37:10+08:00 ] 120.25.71.185 183.249.218.235 GET /admin.php/index/index/chart.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_user` LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY ID desc LIMIT 0,10 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:37:14+08:00 ] 120.25.71.185 183.249.218.235 GET /admin.php/index/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012694s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  (  ID=1 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_weixin` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_weixin` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY score desc LIMIT 8 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 6 ) LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_keywords` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_keywords` [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T12:37:19+08:00 ] 120.25.71.185 120.204.17.68 GET /admin.php/index/index/chart.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_user` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` ORDER BY ID desc LIMIT 0,10 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T14:43:18+08:00 ] 120.25.71.185 180.89.235.169 GET /index.php/index/index/order.html?code=071hD7R21JrdvO13VSO2155lR21hD7Rj&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.013671s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwknl2KfDBDUJmi-Q_jukXtc' LIMIT 1 [ RunTime:0.017577s ]
+---------------------------------------------------------------
+[ 2017-11-13T14:43:21+08:00 ] 120.25.71.185 180.89.235.169 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1217883 LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-11-13T18:48:51+08:00 ] 120.25.71.185 183.136.190.62 GET /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-13T19:47:44+08:00 ] 120.25.71.185 183.249.218.235 GET /admin.php/index/table/order_list.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012695s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.025389s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` ORDER BY ID desc LIMIT 0,10 [ RunTime:0.025389s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:08+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/index/shop.html?code=021K1Yxb2xtwyP0DIzzb2DYHxb2K1YxI&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.023438s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwk3yogAGK8L8Cr35FXmf_D8' LIMIT 1 [ RunTime:0.018555s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:10+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010743s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1692822 LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:17+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/index/business.html?code=011VQoSz1WrMTd0VtCSz10XFSz1VQoSA&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011719s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.021485s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.001953s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:20+08:00 ] 120.25.71.185 58.247.212.98 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1393527 LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:33+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/member/myorder.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwk3yogAGK8L8Cr35FXmf_D8' LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:36+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1775933 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:36+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/index/business.html?code=011VQoSz1WrMTd0VtCSz10XFSz1VQoSA&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011719s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:42+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/index/transfer.html?code=001VR5nn0i0Rfr1rV2pn0200nn0VR5nN&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T21:37:43+08:00 ] 120.25.71.185 183.192.201.97 GET /index.php/index/member/myorder.html
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-13T21:38:09+08:00 ] 120.25.71.185 182.140.175.142 GET /index.php/index/index/transfer.html?code=071ru8t817ixEP157Sv81W36t81ru8ts&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011719s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T22:43:35+08:00 ] 120.25.71.185 183.249.218.235 GET /index.php/index/index/shop.html?code=061mzSGX0CibA12vqZIX0j8JGX0mzSGy&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.009765s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  (  flag = 1 ) ORDER BY ID desc LIMIT 6 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-13T22:46:42+08:00 ] 120.25.71.185 183.249.218.235 GET /index.php/index/index/transfer.html?code=081EZ73d03oYuu15AMZc0mna3d0EZ731&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010743s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000977s ]

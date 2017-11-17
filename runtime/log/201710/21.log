@@ -1,0 +1,40 @@
+---------------------------------------------------------------
+[ 2017-10-21T05:52:16+08:00 ] 120.25.71.185 140.205.201.40 POST /index.php?m=member&c=index&a=register&siteid=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002930s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `flag` = 0  AND `complete` = 0 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-10-21T05:52:18+08:00 ] 120.25.71.185 140.205.201.40 GET /index.php?m=wap&a=index&siteid=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010743s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `flag` = 0  AND `complete` = 0 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-10-21T14:17:23+08:00 ] 120.25.71.185 140.205.225.197 POST /index.php?m=member&c=index&a=register&siteid=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012696s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `flag` = 0  AND `complete` = 0 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-10-21T14:17:26+08:00 ] 120.25.71.185 140.205.225.197 GET /index.php?m=wap&a=index&siteid=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011719s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.004883s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `flag` = 0  AND `complete` = 0 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-10-21T19:12:21+08:00 ] 120.25.71.185 221.11.61.183 GET /index.php/index/index/order.html?code=081Kehge0LBmXy15fqee0RsXfe0Kehgd&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001954s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwtsJiMsaNpPaWbFu83ot01w' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-10-21T19:12:24+08:00 ] 120.25.71.185 221.11.61.183 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011719s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1998544 LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-10-21T19:12:58+08:00 ] 120.25.71.185 117.185.27.114 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1486993 LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-10-21T23:52:23+08:00 ] 120.25.71.185 140.205.201.47 GET /index.php?m=wap&a=index&siteid=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `flag` = 0  AND `complete` = 0 [ RunTime:0.000976s ]

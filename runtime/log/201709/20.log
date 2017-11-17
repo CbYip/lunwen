@@ -1,0 +1,1370 @@
+---------------------------------------------------------------
+[ 2017-09-20T03:20:06+08:00 ] 120.25.71.185 202.59.215.136 GET /index.php/index/weixin/getshopcode.html
+[ info ] lunwen.jiezanke.com/index.php/index/weixin/getshopcode.html [运行时间：0.024413s][吞吐率：40.96req/s] [内存消耗：1,385.54kb] [文件加载：45]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'weixin',
+    2 => 'getshopcode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/3G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Weixin->getshopcode[ D:\WebTest\lunwen\lunwen\app\index\controller\Weixin.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-20T03:20:09+08:00 ] 120.25.71.185 202.59.215.136 GET /index.php/index/index/shop.html?code=011DPJqi1qWLiz0kvEqi1UwGqi1DPJqC&state=123
+[ info ] lunwen.jiezanke.com/index.php/index/index/shop.html?code=011DPJqi1qWLiz0kvEqi1UwGqi1DPJqC&state=123 [运行时间：1.066338s][吞吐率：0.94req/s] [内存消耗：2,061.24kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'shop',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/3G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'code' => '011DPJqi1qWLiz0kvEqi1UwGqi1DPJqC',
+  'state' => '123',
+)
+[ info ] [ RUN ] app\index\controller\Index->shop[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\shop.html [ array (
+  0 => 'goods',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010741s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` ORDER BY ID desc LIMIT 6 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:44:09+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/weixin/getshopcode
+[ info ] lunwen.jiezanke.com/index.php/index/weixin/getshopcode [运行时间：0.025391s][吞吐率：39.38req/s] [内存消耗：1,386.53kb] [文件加载：45]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'weixin',
+    2 => 'getshopcode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Weixin->getshopcode[ D:\WebTest\lunwen\lunwen\app\index\controller\Weixin.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-20T16:44:13+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/shop.html?code=0717ihB0255EBX0V2FA02CEgB027ihBF&state=123
+[ info ] lunwen.jiezanke.com/index.php/index/index/shop.html?code=0717ihB0255EBX0V2FA02CEgB027ihBF&state=123 [运行时间：1.051798s][吞吐率：0.95req/s] [内存消耗：2,061.48kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'shop',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0717ihB0255EBX0V2FA02CEgB027ihBF',
+  'state' => '123',
+)
+[ info ] [ RUN ] app\index\controller\Index->shop[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\shop.html [ array (
+  0 => 'goods',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010742s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` ORDER BY ID desc LIMIT 6 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:44:17+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.059572s][吞吐率：16.79req/s] [内存消耗：1,992.48kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=djb841gm3ihjruo96c1nk95uf5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/index/shop.html?code=0717ihB0255EBX0V2FA02CEgB027ihBF&state=123',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010743s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:52:57+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.041990s][吞吐率：23.82req/s] [内存消耗：1,992.61kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=djb841gm3ihjruo96c1nk95uf5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/index/shop.html?code=0717ihB0255EBX0V2FA02CEgB027ihBF&state=123',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:53:55+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.040041s][吞吐率：24.97req/s] [内存消耗：1,992.61kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=djb841gm3ihjruo96c1nk95uf5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/index/shop.html?code=0717ihB0255EBX0V2FA02CEgB027ihBF&state=123',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001954s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:54:04+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/member/index.html
+[ info ] lunwen.jiezanke.com/index.php/index/member/index.html [运行时间：0.052736s][吞吐率：18.96req/s] [内存消耗：2,079.70kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=djb841gm3ihjruo96c1nk95uf5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/index/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Member->index[ D:\WebTest\lunwen\lunwen\app\index\controller\Member.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\member\index.html [ array (
+  0 => 'mem',
+  1 => 'flag',
+  2 => 'user',
+  3 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `WID` = 1514587 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_accept` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_accept` WHERE  `WID` = 1514587 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `WID` = 1514587 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shopcart` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shopcart` WHERE  `WID` = 1514587 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1514587 LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:54:06+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.034181s][吞吐率：29.26req/s] [内存消耗：1,992.34kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=djb841gm3ihjruo96c1nk95uf5',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:54:32+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.033204s][吞吐率：30.12req/s] [内存消耗：1,985.99kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:55:33+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.044923s][吞吐率：22.26req/s] [内存消耗：1,986.00kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7mnphslb2rtrjvaklq11mf5835',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010742s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:57:04+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.046877s][吞吐率：21.33req/s] [内存消耗：1,986.00kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7mnphslb2rtrjvaklq11mf5835',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010743s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:57:53+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.044923s][吞吐率：22.26req/s] [内存消耗：1,986.00kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7mnphslb2rtrjvaklq11mf5835',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010743s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:58:27+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/weixin/getshopcode
+[ info ] lunwen.jiezanke.com/index.php/index/weixin/getshopcode [运行时间：0.020509s][吞吐率：48.76req/s] [内存消耗：1,386.41kb] [文件加载：45]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'weixin',
+    2 => 'getshopcode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7mnphslb2rtrjvaklq11mf5835',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Weixin->getshopcode[ D:\WebTest\lunwen\lunwen\app\index\controller\Weixin.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-20T16:58:31+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/shop.html?code=0716AYB31ESb3L1oAzz31gQIB316AYBx&state=123
+[ info ] lunwen.jiezanke.com/index.php/index/index/shop.html?code=0716AYB31ESb3L1oAzz31gQIB316AYBx&state=123 [运行时间：0.472674s][吞吐率：2.12req/s] [内存消耗：2,061.95kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'shop',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7mnphslb2rtrjvaklq11mf5835',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0716AYB31ESb3L1oAzz31gQIB316AYBx',
+  'state' => '123',
+)
+[ info ] [ RUN ] app\index\controller\Index->shop[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\shop.html [ array (
+  0 => 'goods',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010743s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.004883s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` ORDER BY ID desc LIMIT 6 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-09-20T16:58:32+08:00 ] 120.25.71.185 14.222.40.205 GET /index.php/index/index/order.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/order.html [运行时间：0.033205s][吞吐率：30.12req/s] [内存消耗：1,992.48kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=7mnphslb2rtrjvaklq11mf5835',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/index/shop.html?code=0716AYB31ESb3L1oAzz31gQIB316AYBx&state=123',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.01.170907 MicroMessenger/6.5.7 Language/zh_CN webview/{{webviewID}} webdebugger port/9974',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->order[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\order.html [ array (
+  0 => 'user',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwhdIBAsdkH35UVuNRBjbhtY' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:07:28+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/weixin/getshopcode.html
+[ info ] lunwen.jiezanke.com/index.php/index/weixin/getshopcode.html [运行时间：0.024415s][吞吐率：40.96req/s] [内存消耗：1,385.55kb] [文件加载：45]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'weixin',
+    2 => 'getshopcode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Weixin->getshopcode[ D:\WebTest\lunwen\lunwen\app\index\controller\Weixin.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-20T17:07:30+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/index/shop.html?code=0019OdKh2SPq6G0GTPJh2Dn1Kh29OdKv&state=123
+[ info ] lunwen.jiezanke.com/index.php/index/index/shop.html?code=0019OdKh2SPq6G0GTPJh2Dn1Kh29OdKv&state=123 [运行时间：0.437517s][吞吐率：2.29req/s] [内存消耗：2,061.24kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'shop',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0019OdKh2SPq6G0GTPJh2Dn1Kh29OdKv',
+  'state' => '123',
+)
+[ info ] [ RUN ] app\index\controller\Index->shop[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\shop.html [ array (
+  0 => 'goods',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` ORDER BY ID desc LIMIT 6 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:07:42+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/member/index.html
+[ info ] lunwen.jiezanke.com/index.php/index/member/index.html [运行时间：0.066409s][吞吐率：15.06req/s] [内存消耗：2,079.58kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/index/shop.html?code=0019OdKh2SPq6G0GTPJh2Dn1Kh29OdKv&state=123',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Member->index[ D:\WebTest\lunwen\lunwen\app\index\controller\Member.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\member\index.html [ array (
+  0 => 'mem',
+  1 => 'flag',
+  2 => 'user',
+  3 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010742s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_accept` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_accept` WHERE  `WID` = 1765747 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `WID` = 1765747 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shopcart` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shopcart` WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1765747 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:07:47+08:00 ] 120.25.71.185 202.59.215.37 POST /index.php/index/member/qiandao.html
+[ info ] lunwen.jiezanke.com/index.php/index/member/qiandao.html [运行时间：0.044924s][吞吐率：22.26req/s] [内存消耗：2,014.17kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'member',
+    2 => 'qiandao',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'content-length' => '11',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'origin' => 'http://lunwen.jiezanke.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'wid' => '1765747',
+)
+[ info ] [ RUN ] app\index\controller\Member->qiandao[ D:\WebTest\lunwen\lunwen\app\index\controller\Member.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1765747 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `WID` = 1765747 LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  `ID` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `jzk_user`  SET `score`=50  WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `jzk_qiandao`  SET `time`='2017-09-20'  WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:07:55+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/index/shop.html
+[ info ] lunwen.jiezanke.com/index.php/index/index/shop.html [运行时间：0.041017s][吞吐率：24.38req/s] [内存消耗：2,001.25kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'shop',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->shop[ D:\WebTest\lunwen\lunwen\app\index\controller\Index.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\index\shop.html [ array (
+  0 => 'goods',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.001954s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` ORDER BY ID desc LIMIT 6 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:08:01+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/good/detail/id/6.html
+[ info ] lunwen.jiezanke.com/index.php/index/good/detail/id/6.html [运行时间：0.093754s][吞吐率：10.67req/s] [内存消耗：2,058.30kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'detail',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/index/shop.html',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+)
+[ info ] [ RUN ] app\index\controller\Good->detail[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\good\detail.html [ array (
+  0 => 'goods',
+  1 => 'color',
+  2 => 'size',
+  3 => 'shopuser',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  `ID` = 6 LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:08:18+08:00 ] 120.25.71.185 202.59.215.37 POST /index.php/index/good/pay.html
+[ info ] lunwen.jiezanke.com/index.php/index/good/pay.html [运行时间：0.042971s][吞吐率：23.27req/s] [内存消耗：1,997.26kb] [文件加载：52]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'pay',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'content-length' => '60',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/detail/id/6.html',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'origin' => 'http://lunwen.jiezanke.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '6',
+  'goodsnum' => '1',
+  'size' => 'XL',
+  'color' => '白色',
+  'wid' => '1765747',
+)
+[ info ] [ RUN ] app\index\controller\Good->pay[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  `ID` = 6 LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `ID` = 201709202763 LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] INSERT INTO `jzk_shoporder` (`temp` , `num` , `total` , `score` , `flag` , `shopflag` , `ordernumber` , `time` , `addid` , `size` , `color` , `WID`) VALUES ('6,' , '1,' , 188 , 50 , 0 , 0 , '201709202763' , '2017-09-20 17:08:18' , 0 , 'XL,' , '白色,' , 1765747) [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:08:19+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/good/checkout.html?order=201709202763
+[ info ] lunwen.jiezanke.com/index.php/index/good/checkout.html?order=201709202763 [运行时间：0.168951s][吞吐率：5.92req/s] [内存消耗：2,055.84kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'checkout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/detail/id/6.html',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'order' => '201709202763',
+)
+[ info ] [ RUN ] app\index\controller\Good->checkout[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\good\checkout.html [ array (
+  0 => 'order',
+  1 => 'wid',
+  2 => 'shoporder',
+  3 => 'address',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `ordernumber` = '201709202763'  AND `flag` = 0 LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_address` [ RunTime:0.033204s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_address` WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.001954s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  `ID` = 6 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_cate` [ RunTime:0.044924s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_cate` WHERE  `ID` = 48 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:08:35+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/good/address/order/201709202763/wid/1765747.html
+[ info ] lunwen.jiezanke.com/index.php/index/good/address/order/201709202763/wid/1765747.html [运行时间：0.035158s][吞吐率：28.44req/s] [内存消耗：1,435.54kb] [文件加载：46]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'address',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/checkout.html?order=201709202763',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'order' => '201709202763',
+  'wid' => '1765747',
+)
+[ info ] [ RUN ] app\index\controller\Good->address[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\good\address.html [ array (
+  0 => 'wid',
+  1 => 'order',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-20T17:09:22+08:00 ] 120.25.71.185 117.185.27.113 GET /index.php/index/good/address/order/201709202763/wid/1765747.html
+[ info ] lunwen.jiezanke.com/index.php/index/good/address/order/201709202763/wid/1765747.html [运行时间：0.022460s][吞吐率：44.52req/s] [内存消耗：1,434.53kb] [文件加载：46]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'address',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'host' => 'lunwen.jiezanke.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 MicroMessenger/6.5.2.501 NetType/WIFI WindowsWechat QBCore/3.43.27.400 QQBrowser/9.0.2524.400',
+)
+[ info ] [ PARAM ] array (
+  'order' => '201709202763',
+  'wid' => '1765747',
+)
+[ info ] [ RUN ] app\index\controller\Good->address[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\good\address.html [ array (
+  0 => 'wid',
+  1 => 'order',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-20T17:09:47+08:00 ] 120.25.71.185 202.59.215.37 POST /index.php/index/good/address.html
+[ info ] lunwen.jiezanke.com/index.php/index/good/address.html [运行时间：0.042966s][吞吐率：23.27req/s] [内存消耗：1,983.09kb] [文件加载：52]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'address',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'content-length' => '209',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/address/order/201709202763/wid/1765747.html',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'origin' => 'http://lunwen.jiezanke.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'city' => '浙江省,杭州市,萧山区 ',
+  'citydetail' => '文昌大厦',
+  'name' => '杨老师',
+  'tel' => '17051056565',
+  'wuliu' => '',
+  'wid' => '1765747',
+)
+[ info ] [ RUN ] app\index\controller\Good->address[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010741s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_address` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] INSERT INTO `jzk_address` (`name` , `tel` , `city` , `citydetail` , `wuliu` , `WID`) VALUES ('杨老师' , '17051056565' , '浙江省,杭州市,萧山区 ' , '文昌大厦' , '' , 1765747) [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:09:49+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/good/checkout.html?order=201709202763
+[ info ] lunwen.jiezanke.com/index.php/index/good/checkout.html?order=201709202763 [运行时间：0.060543s][吞吐率：16.52req/s] [内存消耗：2,056.91kb] [文件加载：53]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'checkout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/address/order/201709202763/wid/1765747.html',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'order' => '201709202763',
+)
+[ info ] [ RUN ] app\index\controller\Good->checkout[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\good\checkout.html [ array (
+  0 => 'order',
+  1 => 'wid',
+  2 => 'shoporder',
+  3 => 'address',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `ordernumber` = '201709202763'  AND `flag` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_address` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_address` WHERE  `WID` = 1765747 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  `ID` = 6 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_cate` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_cate` WHERE  `ID` = 48 LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:09:58+08:00 ] 120.25.71.185 202.59.215.37 POST /index.php/index/good/checkout.html
+[ info ] lunwen.jiezanke.com/index.php/index/good/checkout.html [运行时间：0.091791s][吞吐率：10.89req/s] [内存消耗：2,080.86kb] [文件加载：55]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'checkout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'content-length' => '62',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/checkout.html?order=201709202763',
+  'connection' => 'close',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'origin' => 'http://lunwen.jiezanke.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+  'orderid' => '201709202763',
+  'addid' => '12',
+  'goodid' => '6,',
+  'score' => '50',
+  'wid' => '1765747',
+)
+[ info ] [ RUN ] app\index\controller\Good->checkout[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `ordernumber` IS NULL  AND `flag` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_address` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_address` WHERE  `WID` = 1765747 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  `ID` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_cate` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_cate` WHERE  `ID` IS NULL LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `WID` = 1765747 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_jifen` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_jifen` WHERE  `ID` = 1 LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] UPDATE `jzk_user`  SET `score`=50  WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `temp` = '6,' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  `ID` = 6 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `jzk_goods`  SET `sales`=17,`orders`=8,`goodsnum`=106  WHERE  `ID` = 6 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] UPDATE `jzk_shoporder`  SET `flag`=1,`addid`=12  WHERE  `ordernumber` = '201709202763' [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:09:59+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/good/paytip.html
+[ info ] lunwen.jiezanke.com/index.php/index/good/paytip.html [运行时间：0.031248s][吞吐率：32.00req/s] [内存消耗：1,433.95kb] [文件加载：46]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'good',
+    2 => 'paytip',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/checkout.html?order=201709202763',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Good->paytip[ D:\WebTest\lunwen\lunwen\app\index\controller\Good.php ]
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\good\paytip.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-09-20T17:10:08+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/member/index.html
+[ info ] lunwen.jiezanke.com/index.php/index/member/index.html [运行时间：0.066402s][吞吐率：15.06req/s] [内存消耗：2,079.36kb] [文件加载：54]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/good/paytip.html',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Member->index[ D:\WebTest\lunwen\lunwen\app\index\controller\Member.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\member\index.html [ array (
+  0 => 'mem',
+  1 => 'flag',
+  2 => 'user',
+  3 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `WID` = 1765747 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_accept` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_accept` WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `WID` = 1765747 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shopcart` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shopcart` WHERE  `WID` = 1765747 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1765747 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-09-20T17:10:11+08:00 ] 120.25.71.185 202.59.215.37 GET /index.php/index/member/shoporder.html
+[ info ] lunwen.jiezanke.com/index.php/index/member/shoporder.html [运行时间：0.172840s][吞吐率：5.79req/s] [内存消耗：2,169.73kb] [文件加载：57]
+[ info ] [ LANG ] D:\WebTest\lunwen\lunwen\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'member',
+    2 => 'shoporder',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://lunwen.jiezanke.com/index.php/index/member/index.html',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 MicroMessenger/6.5.16 NetType/4G Language/zh_CN',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=engvm39b19vea0q2jgekfs49p3',
+  'host' => 'lunwen.jiezanke.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Member->shoporder[ D:\WebTest\lunwen\lunwen\app\index\controller\Member.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WebTest\lunwen\lunwen/app/index\view\member\shoporder.html [ array (
+  0 => 'mem',
+  1 => 'flag',
+  2 => 'user',
+  3 => 'shoporder',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwpnuMbkEmjWW0XF6wjJKT3k' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_shoporder` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_shoporder` WHERE  `WID` = 1765747 LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_shoporder` WHERE  `WID` = 1765747 ORDER BY ID desc LIMIT 0,5 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_goods` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_goods` WHERE  `ID` = 6 LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_cate` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_cate` WHERE  `ID` = 48 LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1765747 LIMIT 1 [ RunTime:0.000000s ]

@@ -1,0 +1,106 @@
+---------------------------------------------------------------
+[ 2017-11-05T04:43:30+08:00 ] 120.25.71.185 140.205.201.34 POST /index.php?m=member&c=index&a=register&siteid=1
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T04:43:30+08:00 ] 120.25.71.185 140.205.201.34 GET /index.php?m=wap&a=index&siteid=1
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T06:23:51+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/member/myorder.html?code=021uZK8T1tyel918v47T1kFv8T1uZK8c&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwkAjNqiHPBo3fe4FGli9_mg' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_order` WHERE  `WID` = '1958856' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `WID` = '1958856' ORDER BY ID desc LIMIT 0,3 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1958856 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-05T06:23:51+08:00 ] 120.25.71.185 125.39.46.47 GET /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T06:23:52+08:00 ] 120.25.71.185 111.30.142.78 GET /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T06:23:54+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/member/order_detail/id/45.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001953s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `id` = '45' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwkAjNqiHPBo3fe4FGli9_mg' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1958856 LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-11-05T06:23:54+08:00 ] 120.25.71.185 125.39.132.92 GET /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T06:23:55+08:00 ] 120.25.71.185 111.30.142.227 GET /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T06:23:59+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/member/myorder.html?code=021uZK8T1tyel918v47T1kFv8T1uZK8c&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003907s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwkAjNqiHPBo3fe4FGli9_mg' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jzk_order` WHERE  `WID` = '1958856' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `WID` = '1958856' ORDER BY ID desc LIMIT 0,3 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.001954s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` = 1958856 LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-11-05T06:24:04+08:00 ] 120.25.71.185 120.204.17.46 GET /index.php/index/member/order_detail/id/45.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_order` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_order` WHERE  `id` = '45' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_qiandao` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_qiandao` WHERE  `WID` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-05T13:54:09+08:00 ] 120.25.71.185 125.39.132.92 GET /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T13:54:13+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/index/business.html?code=071zpybj0tan0l1zXcej0eQebj0zpybD&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 7 ) LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-05T13:54:19+08:00 ] 120.25.71.185 111.30.142.78 GET /
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T13:54:41+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/member/index.html?code=061Tt7Vp0bj1Tr190aWp01oxVp0Tt7VB&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.003906s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwkKdjZ-4BUjaFMNHbUoTxCs' LIMIT 1 [ RunTime:0.000977s ]
+---------------------------------------------------------------
+[ 2017-11-05T13:54:44+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1952676 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-05T13:54:54+08:00 ] 120.25.71.185 58.247.212.98 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012695s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002929s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1975967 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-05T13:54:58+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/index/shop.html?code=011IxYnx1cKsSf0g16px1XNRnx1IxYnY&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `openid` = 'ojWxNwkKdjZ-4BUjaFMNHbUoTxCs' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2017-11-05T13:55:00+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/login/reg/c/index/a/shop.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011718s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_user` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_user` WHERE  `ID` = 1667608 LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-11-05T13:55:05+08:00 ] 120.25.71.185 123.151.77.121 GET /index.php/index/index/transfer.html?code=06196P5D1KZX510lyN5D149W5D196P5X&state=123
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=lunwen;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jzk_set` [ RunTime:0.002930s ]
+[ sql ] [ SQL ] SELECT * FROM `jzk_set` WHERE  (  ID = 5 ) LIMIT 1 [ RunTime:0.000976s ]
+---------------------------------------------------------------
+[ 2017-11-05T14:09:27+08:00 ] 120.25.71.185 140.205.225.191 POST /index.php?m=member&c=index&a=register&siteid=1
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T14:09:30+08:00 ] 120.25.71.185 140.205.225.191 GET /index.php?m=wap&a=index&siteid=1
+[ error ] [8]未定义数组索引: openid
+---------------------------------------------------------------
+[ 2017-11-05T18:48:38+08:00 ] 120.25.71.185 183.136.190.40 GET /
+[ error ] [8]未定义数组索引: openid
