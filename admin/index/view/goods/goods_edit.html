@@ -1,0 +1,131 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        商品详情
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="#" class="am-icon-home">首页</a></li>
+        <li class="am-active">商品详情</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="portlet-title">
+            <div class="caption font-green bold">
+                <span class="am-icon-code"></span> 表单
+            </div>
+        </div>
+        <div class="tpl-block ">
+            <div class="am-g tpl-amazeui-form">
+                <div class="am-u-sm-12 am-u-md-9">
+                    <form class="am-form am-form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="am-form-group">
+                            <label for="goods_name" class="am-u-sm-3 am-form-label">商品名 / goods_name</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="goods_name" name="goods_name" value="{$good.goodsname}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="goods_num" class="am-u-sm-3 am-form-label">库存 / goods_num</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="goods_num" name="goods_num" value="{$good.goodsnum}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="Score" class="am-u-sm-3 am-form-label">积分 / Score</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="Score" name="score" value="{$good.score}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="Goods_price" class="am-u-sm-3 am-form-label">单价 / Goods_price</label>
+                            <div class="am-u-sm-9">
+                                <input type="text"  id="Goods_price" name="goods_price" value="{$good.goodsprice}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="delivery" class="am-u-sm-3 am-form-label">运费 / Delivery</label>
+                            <div class="am-u-sm-9">
+                                <input type="text"  id="delivery" name="delivery" value="{$good.delivery}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="type" class="am-u-sm-3 am-form-label">商品分类 / Type</label>
+                            <div class="am-u-sm-9">
+                                <select id="doc-select-1" name="type">
+                                    {volist name="type" id="vo"}
+                                    {if condition="$good.type eq $vo.ID"}
+                                    <option value="{$vo.ID}" selected>{$vo.typename}</option>
+                                    {else/}
+                                    <option value="{$vo.ID}">{$vo.typename}</option>
+                                    {/if}
+                                    {/volist}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="sales" class="am-u-sm-3 am-form-label">销量 / Sales</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="sales" name="sales" value="{$good.sales}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="orders" class="am-u-sm-3 am-form-label">订单量 / Orders</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="orders" name="orders" value="{$good.orders}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="comment" class="am-u-sm-3 am-form-label">评论量 / Comment</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="comment" name="comment" value="{$good.comment}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="Size" class="am-u-sm-3 am-form-label">尺寸 / Size</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="Size" name="size" value="{$good.size}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="color" class="am-u-sm-3 am-form-label">颜色 / Color</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="color" name="color" value="{$good.color}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="detail" class="am-u-sm-3 am-form-label">详情 / Detail</label>
+                            <div class="am-u-sm-9">
+                                <textarea rows="6" id="detail" name="detail">{$good.detail}</textarea>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="Photo" class="am-u-sm-3 am-form-label">商品图 / Photo</label>
+                            <div class="am-u-sm-9">
+                                <img class="photo" name="photo" name="" src="{$good.photo}">
+                            </div>
+                        </div>
+                        <div class="am-form-group" id="photo">
+                            <label for="photo" class="am-u-sm-3 am-form-label">商品图更改 / update</label>
+                            <div class="am-u-sm-9">
+                                <input type="file" id="doc-ipt-file-1" name="update" value="图片上传">
+                                <small class="am-form-help">请选择要上传的图片...</small>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                                <button type="button" class="am-btn am-btn-warning" onclick="window.history.go(-1)">返&nbsp;&nbsp;回</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}

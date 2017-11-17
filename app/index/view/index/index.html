@@ -1,0 +1,107 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav am-dropdown"  data-am-dropdown>
+            <a href="javascript:;" class="am-dropdown-toggle"  data-am-dropdown-toggle>
+                <i class="am-header-icon am-icon-th-large"></i>
+            </a>
+            <div style="display:none">
+
+            </div>
+            {include file="public/header_nav"}
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">易起论文</a>
+        </h1>
+    </header>
+    <!-- banner -->
+    <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}'>
+        <ul class="am-slides">
+            <li>
+                <img src="__IMG__/bing-1.jpg">
+            </li>
+            <li>
+                <img src="__IMG__/bing-2.jpg">
+            </li>
+            <li>
+                <img src="__IMG__/bing-3.jpg">
+            </li>
+            <li>
+                <img src="__IMG__/bing-4.jpg">
+            </li>
+        </ul>
+    </div>
+    <div class="am-cf cart-panel">
+        {volist name="order" id="vo"}
+        <div class="withdrawals-panel">
+            <input type="hidden" value="{$vo.ID}" id="id">
+            <p class="groupby-t-p"><span class="am-fr">{$vo.ftime}</span>订单号：{$vo.order}</p>
+            <hr  class="am-divider am-divider-default am-cf"/>
+            <div class="groupby-info-panle">
+                <h3><a href="{:url('member/accept_detail',['id'=>$vo.ID])}">题目：{$vo.title}</a></h3>
+                <div class="am-u-sm-6">
+                    <p>金额：<span class="red2 bold">{$vo.price}</span> 元 </p>
+                    <p>姓名：{$vo.username} </p>
+                    <p>完成时间：{$vo.ctime} </p>
+                    <p><a href="{:url('member/accept_detail',['id'=>$vo.ID])}" class="am-btn am-btn-primary am-btn-xs am-btn-danger am-radius">订单详情</a> <button id="sub" class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius">我要接单</button></p>
+                </div>
+                <div class="am-u-sm-6">
+                    {if condition="$vo.service eq 1"}
+                    <p>订单类型：<span class="am-text-success">&nbsp;文稿代写</span></p>
+                    {elseif condition="$vo.service eq 2"/}
+                    <p>订单类型：<span class="am-text-success">&nbsp;期刊发表</span></p>
+                    {elseif condition="$vo.service eq 3"/}
+                    <p>订单类型：<span class="am-text-success">&nbsp;论文修改</span></p>
+                    {else/}
+                    <p>订单类型：<span class="am-text-success">&nbsp;包写包发</span></p>
+                    {/if}
+                    <p>电话号码： {$vo.usertel}</p>
+                    {if condition="$vo.flag eq 0"}
+                    <p>状态：<span class="am-text-success">已付款</span></p>
+                    {elseif condition="$vo.flag eq 1"/}
+                    <p>状态：<span class="red2">未付款</span></p>
+                    {else/}
+                    <p>状态：<span class="red2">待审核</span></p>
+                    {/if}
+                </div>
+
+            </div>
+        </div>
+        {/volist}
+        <!--<ul class="am-pagination am-pagination-centered">-->
+        <!--<li class="am-disabled"><a href="#">&laquo;</a></li>-->
+        <!--<li class="am-active"><a href="#">1</a></li>-->
+        <!--<li><a href="#">2</a></li>-->
+        <!--<li><a href="#">3</a></li>-->
+        <!--<li><a href="#">4</a></li>-->
+        <!--<li><a href="#">5</a></li>-->
+        <!--<li><a href="#">&raquo;</a></li>-->
+        <!--</ul>-->
+        <script type="text/javascript">
+            $('#sub').click(function () {
+                if(confirm("是否接受订单")){
+                    $('#sub').fadeOut(500);
+                    var id = $('#id').val();
+                    $.ajax({
+                        type: "post",
+                        url: "{:url('member/accept_detail')}",
+                        dataType: "json",
+                        data: {"id":id},
+                        success:function (data) {
+                            if(data == 1){
+                                alert("订单接受成功！");
+                                window.location.reload();
+                            }else {
+                                alert("订单接受失败！");
+                            }
+                        }
+                    })
+                }else{
+                    return false;
+                }
+            });
+        </script>
+    </div>
+
+{include file="public/footer"}

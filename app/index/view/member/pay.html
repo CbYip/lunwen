@@ -1,0 +1,120 @@
+{include file="public/header"}
+<body>
+
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="javascript:;" class="" onclick="window.history.go(-1);">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">提交订单</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="{:url('good/checkout')}" class="">
+                <i class="am-header-icon  am-icon-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+    <div class="gray-panel">
+        <div class="paoduct-title-panel">
+            <h2 class="checkout-h2"><span class="am-badge am-round am-badge-warning ">1</span> 确认订单信息</h2>
+            <div class="cart-list-panel">
+                <ul class="am-avg-sm-1 cart-panel-ul">
+                    <li>
+                        <div class="infopanel">
+                            <h3>订单号：{$list.order}</h3>
+                            <p>金额：<span class="red2 bold">{$list.price}</span> 元</p>
+                            <p>姓名：<span class="red2 bold">{$list.username}</span></p>
+                            <p>联系方式：<span class="red2 bold">{$list.usertel}</span></p>
+                            <p>题目：<span class="red2 bold">{$list.title}</span>
+                            {if condition = "$list.service eq 1"}
+                            <p>服务类型：<span class="red2 bold">文稿代写</span></p>
+                            <p>完成时间：<span class="red2 bold">{:date("Y-m-d", $list.ctime)}</span></p>
+                            {elseif condition = "$list.service eq 2" /}
+                            <p>服务类型：<span class="red2 bold">论文发表</span></p>
+                            <p>完成时间：<span class="red2 bold">{$list.fatime}</span></p>
+                            {elseif condition = "$list.service eq 3" /}
+                            <p>服务类型：<span class="red2 bold">论文修改</span></p>
+                            <p>完成时间：<span class="red2 bold">{:date("Y-m-d", $list.ctime)}</span></p>
+                            {else/}
+                            <p>服务类型：<span class="red2 bold">包写包发</span></p>
+                            <p>完成时间：<span class="red2 bold">{$list.fatime}</span></p>
+                            {/if}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cart_foot">总价：<span class="red2 bold" id="total_amount">{$list.price}</span>元</div>
+        </div>
+        <div class="my-search-title-panel am-text-sm am-margin-bottom-sm">
+            <i class="am-icon-lightbulb-o am-text-danger"></i>
+            提示：确认无误之后可以进行微信支付，如若要进行其他支付方式，可以在公众号的客服中心->汇款方式进行转账支付，在转账中备注好订单号，姓名，联系方式。待收到您的款项后我们会安排工作人员对您的付款信息进行更新。
+        </div>
+
+        <script>
+            $(document).ready(function(e) {
+                $(".address").click(function(){
+                    $(".address").removeClass('click');
+                    $(this).addClass('click');
+                });
+            });
+        </script>
+        <div class="paoduct-title-panel">
+            <h2 class="checkout-h2"><span class="am-badge am-round am-badge-warning ">2</span> 支付方式</h2>
+            <ul class="am-list am-text-sm my-pay-ul">
+                <li><a href="javascript:;" rel="1" class="hover"><span class="am-fr"><i class="am-icon-check-circle"></i>&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;<img src="__IMG__/default/wechat.png" class="payimg" />&nbsp;&nbsp;&nbsp;&nbsp;微信支付</a></li>
+            </ul>
+            <script>
+                $(document).ready(function(e) {
+                    $(".my-pay-ul li > a").click(function(){
+                        $(".my-pay-ul li > a").removeClass('hover');
+                        $(".my-pay-ul li > a i").removeClass('am-icon-check-circle').addClass('am-icon-circle-thin');
+                        $(this).addClass('hover');
+                        var val = $(this).attr('rel');
+                        $("#paytype").val(val);
+                        $(this).find('i').removeClass('am-icon-circle-thin').addClass('am-icon-check-circle');
+
+                    });
+                });
+            </script>
+            <div>
+                <ul class="am-avg-sm-2 am-text-center ">
+                    <li class="am-text-center am-padding-sm order-submit"><button type="button" class="am-btn am-btn-danger am-btn-block am-radius" onclick="callpay();">提交订单</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        //调用微信JS api 支付
+        function onBridgeReady() {
+            WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',
+                {$jsApiParameters},
+                function (res) {
+                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+                        window.location.href="{:url('member/myorder')}";
+                    }
+                    // 使用以上方式判断前端返回,微信团队郑重提示:res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+                    if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                    }
+                }
+            );
+        }
+
+        function callpay() {
+                if (typeof WeixinJSBridge == "undefined") {
+                    if (document.addEventListener) {
+                        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                    } else if (document.attachEvent) {
+                        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                    }
+                } else {
+                    onBridgeReady();
+                }
+        }
+    </script>
+    {include file="public/footer"}

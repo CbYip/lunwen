@@ -1,0 +1,221 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav am-dropdown"  data-am-dropdown>
+            <a href="javascript:;" class="am-dropdown-toggle"  data-am-dropdown-toggle>
+                <i class="am-header-icon am-icon-th-large"></i>
+            </a>
+            {include file="public/header_nav"}
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">购物车</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="{:url('index/shop')}" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+    <!--头部导航-->
+    {include file="public/nav"}
+
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="{:url('member/index')}">首页</a></li>
+            <li class="am-active">购物车</li>
+        </ol>
+    </div>
+    <div class="am-cf cart-panel">
+        <div class="cart-list-panel">
+            <ul class="am-avg-sm-1 cart-panel-ul">
+                <input type="hidden" id="wid" value="{$user.WID}">
+                <input type="hidden" id="score" value="{$user.score}">
+                {volist name="goods" id="vo"}
+                <li>
+                    <div class="shopcheck">
+                        <span>
+                            <input type="checkbox" class="check">
+                            <input type="hidden" class="goodsid" value="{$vo.goodsid}">
+                            <input type="hidden" class="shopcartid" value="{$vo.ID}">
+                            <input type="hidden" class="color" value="{$vo.color}">
+                            <input type="hidden" class="size" value="{$vo.size}">
+                        </span>
+                    </div>
+                    <div class="imgpanel"><a href="#"><img src="{$vo.photo}" class="am-img-responsive img"/></a></div>
+                    <div class="infopanel">
+                        <h3><a href="#">{$vo.goodsname}</a></h3>
+                        <p>品牌：{$vo.type}</p>
+                        <p>价格：<span class="red2 bold price">{$vo.price}</span> 元 X <input class="am-input-sm txt-qty num" type="number" value="{$vo.num}"/></p>
+                        <p>积分：<span class="red2 bold score">{$vo.score}</span>&nbsp;&nbsp;&nbsp;运费：<span class="yunfei">{$vo.delivery}</span></p>
+                        <p><span class="am-fr"><a class="am-badge am-badge-danger am-round delete">删除</a></span>库存：<span
+                                class="red2 bold">{$vo.goodsnum}</span> 件</p>
+                    </div>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+    <div class="cart_foot">全选/取消<input type="checkbox" class="checkall">
+        <span class="all">
+            共选中<span class="red2 bold" id="total_good">0</span>种商品；
+            总价：<span class="red2 bold" id="total_amount">0</span>元；
+            总积分：<span class="red2 bold" id="total_jifen">0</span>分；
+            运费：<span class="red2 bold" id="total_yunfei">0</span>元
+        </span>
+    </div>
+    <div class="cart-tool">
+        <a class="am-btn am-btn-sm am-btn-success" href="{:url('index/shop')}">
+            <i class="am-icon-chevron-left"></i>
+            返回
+        </a>
+        <a class="am-btn am-btn-sm am-btn-warning" id="pay" href="#">
+            <i class="am-icon-shopping-cart"></i>
+            结账
+        </a>
+    </div>
+    <script type="text/javascript">
+        //选择
+        $('.check').click(function () {
+            if ($(this).is(":checked")) {
+                $(this).prop("checked", true);
+            } else {
+                $(this).prop("checked", false);
+            }
+            //计算选中的商品、总价和总积分
+            var checknum = $(".check:checked").length;
+            var content = "";
+            var totalprice = 0;
+            var totalscore = 0;
+            var totalyunfei = 0;
+            //清空
+            $('.all').empty();
+            //计算总价,总积分和运费
+            $('.check:checked').each(function () {
+                var num = $(this).parent().parent().parent().children(".infopanel").children().children('.num').val();
+                var price = $(this).parent().parent().parent().children(".infopanel").children().children('.price').text();
+                var score = $(this).parent().parent().parent().children(".infopanel").children().children('.score').text();
+                var yunfei = $(this).parent().parent().parent().children(".infopanel").children().children('.yunfei').text();
+                totalprice += price * num;
+                totalscore += score * num;
+                if(yunfei == "包邮"){
+                    totalyunfei += 0;
+                }else{
+                    totalyunfei += parseInt(yunfei);
+                }
+            })
+            totalprice = parseFloat(totalprice.toFixed(2));
+            content = '共选中<span class="red2 bold"\n' +
+                '              id="total_good">'+checknum+'</span>种商品；总价：<span\n' +
+                '            class="red2 bold" id="total_amount">'+totalprice+'</span>元；总积分：<span class="red2 bold" id="total_jifen">'+totalscore+'</span>\n' +
+                '           运费：<span class="red2 bold" id="total_yunfei">'+ totalyunfei +'</span>元';
+            $('.all').append(content);
+        })
+
+        //全选或者取消
+        $(".checkall").click(function () {
+                if ($(this).is(":checked")) {
+                    $('.check').prop("checked", true);
+                } else {
+                    $('.check').prop("checked", false);
+                }
+                //计算选中的商品、总价和总积分
+                var checknum = $(".check:checked").length;
+                var content = "";
+                var totalprice = 0;
+                var totalscore = 0;
+                var totalyunfei = 0;
+                //清空
+                $('.all').empty();
+                //计算总价和总积分
+                $('.check:checked').each(function () {
+                    var num = $(this).parent().parent().parent().children(".infopanel").children().children('.num').val();
+                    var price = $(this).parent().parent().parent().children(".infopanel").children().children('.price').text();
+                    var score = $(this).parent().parent().parent().children(".infopanel").children().children('.score').text();
+                    var yunfei = $(this).parent().parent().parent().children(".infopanel").children().children('.yunfei').text();
+                    totalprice += price * num;
+                    totalscore += score * num;
+                    if(yunfei == "包邮"){
+                        totalyunfei += 0;
+                    }else{
+                        totalyunfei += parseInt(yunfei);
+                    }
+                })
+                content = '共选中<span class="red2 bold"\n' +
+                    '              id="total_good">'+checknum+'</span>种商品；总价：<span\n' +
+                    '            class="red2 bold" id="total_amount">'+totalprice+'</span>元；总积分：<span class="red2 bold" id="total_jifen">'+totalscore+'</span>\n' +
+                    '           运费：<span class="red2 bold" id="total_yunfei">'+ totalyunfei +'</span>元';
+                $('.all').append(content);
+            }
+        )
+
+        //提交生成订单
+        $('#pay').click(function () {
+            var temp = "";
+            var num = "";
+            var size = "";
+            var color = "";
+            var total = $('#total_amount').text();
+            var score = $('#total_jifen').text();
+            var yunfei = $('#total_yunfei').text();
+            var select = $('#total_good').text();
+            var userscore = $('#score').val();
+            var wid = $('#wid').val();
+            if(select == 0){
+                alert("您还没有选择商品！");
+                return false;
+            }else if (parseInt(score) > parseInt(userscore)){
+                alert("您的个人积分不足！");
+                return false;
+            }else {
+                $(".check:checked").each(function () {
+                    var tablerow = $(this).parent();
+                    var tablenum = $(this).parent().parent().parent().children(".infopanel").children().children(".num").val();
+                    var tablesize = $(this).parent().children(".size").val();
+                    var tablecolor = $(this).parent().children(".color").val();
+                    var id = tablerow.find("input[class='goodsid']").val();
+                    temp += id + ",";
+                    num += tablenum + ",";
+                    size += tablesize + ",";
+                    color += tablecolor + ",";
+                });
+                $.ajax({
+                    type: "post",
+                    url: "{:url('good/shoporder')}",
+                    data: {'temp': temp, "num": num, "total": total, "score": score, "wid": wid, "size":size, "color":color, "yunfei":yunfei},
+                    dataType: "json",
+                    success: function (data) {
+                        var json = eval(data);
+                        if (json.flag == 1) {
+                            var str = "{:url('good/checkout')}";
+                            var url = str + "?order=" + json.order;
+                            window.location.href = url;
+                        } else {
+                            alert("结账失败！");
+                            window.location.reload();
+                        }
+                    }
+                })
+            }
+        })
+
+        //删除订单
+        $('.delete').click(function () {
+            var id = $(this).parent().parent().parent().parent().children(".shopcheck").children().children(".shopcartid").val();
+            $.ajax({
+                type:"post",
+                url:"{:url('good/delete')}",
+                data:{'id':id},
+                dataType:"json",
+                success:function (data) {
+                    if(data != 0){
+                        window.location.reload();
+                    }else{
+                        alert("商品删除失败!");
+                        return false;
+                    }
+                }
+            })
+        })
+    </script>
+    {include file="public/footer"}

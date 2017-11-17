@@ -1,0 +1,99 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        商品分类添加
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="/admin.php" class="am-icon-home">首页</a></li>
+        <li class="am-active">分类添加</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="portlet-title">
+            <div class="caption font-green bold">
+                <span class="am-icon-code"></span> 表单
+            </div>
+            <div class="am-u-md-9" style="text-align: center">
+                <span>往下增加
+                    <select id="doc-select-2">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    个商品分类添加栏
+                </span>
+            </div>
+        </div>
+        <div class="tpl-block ">
+            <div class="am-g tpl-amazeui-form">
+                <div class="am-u-sm-12 am-u-md-9">
+                    <form class="am-form am-form-horizontal" method="post">
+                        <div class="am-form-group">
+                            <label for="typename" class="am-u-sm-3 am-form-label">分类名 / typeNames</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" class="typename" name="typename[]" placeholder="添加商品分类">
+                            </div>
+                        </div>
+                        <div class="am-form-group" id="type">
+                            <label for="typeClassic" class="am-u-sm-3 am-form-label">所属分类 / typeClassic</label>
+                            <div class="am-u-sm-9">
+                                <select id="doc-select-1" name="type[]">
+                                    <option value="0">这是一级父类</option>
+                                    {volist name="type" id="vo"}
+                                    <option value="{$vo.ID}">{$vo.typename}</option>
+                                    {/volist}
+                                </select>
+                                <small>默认为一级父类</small>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#doc-select-2').change(function () {
+        var length = $(this).val();
+        var content = "";
+        for(var i = 0; i< length; i++){
+            content += '<div class="am-form-group">\n' +
+                '                            <label for="typename" class="am-u-sm-3 am-form-label">分类名 / typeNames</label>\n' +
+                '                            <div class="am-u-sm-9">\n' +
+                '                                <input type="text" class="typename" name="typename[]" placeholder="添加商品分类">\n' +
+                '                            </div>\n' +
+                '                        </div>\n' +
+                '                        <div class="am-form-group">\n' +
+                '                            <label for="typeClassic" class="am-u-sm-3 am-form-label">所属分类 / typeClassic</label>\n' +
+                '                            <div class="am-u-sm-9">\n' +
+                '                                <select id="doc-select-1" name="type[]">\n' +
+                '                                    <option value="0">这是一级父类</option>\n' +
+                '                                   {volist name="type" id="vo"}' +
+                '                                    <option value="{$vo.ID}">{$vo.typename}</option>\n' +
+                '                                    {/volist}                     \n' +
+                '                                </select>\n' +
+                '                                <small>默认为一级父类</small>\n' +
+                '                            </div>\n' +
+                '                        </div>'
+        }
+        $('#type').append(content);
+    })
+//    $('#btn').click(function () {
+//        var typename = $(']').val();
+//        var pid = $('#doc-select-1').val();
+//    })
+</script>
+{include file="public/footer"}

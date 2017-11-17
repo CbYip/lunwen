@@ -1,0 +1,267 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <!-- banner -->
+    <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}'>
+        <ul class="am-slides">
+            <li>
+                <img src="{$goods.photo}" style="height: 100%;">
+            </li>
+        </ul>
+    </div>
+    <div class="gray-panel">
+        <div class="paoduct-title-panel">
+            <h1 class="product-h1">{$goods.goodsname}&nbsp;&nbsp;&nbsp;<span class="red">¥{$goods.goodsprice}</span>&nbsp;&nbsp;积分：<span class="red gs">{$goods.score}</span>&nbsp;&nbsp;运费：<span class="red gs">¥{$goods.delivery}</span></h1>
+            <input type="hidden" id="goodsid" value="{$goods.ID}">
+            <input type="hidden" id="wid" value="{$shopuser.WID}" />
+            <input type="hidden" id="score" value="{$shopuser.score}" />
+            <!--<p><span class="am-fr product-title-gray-text"><i class="am-icon-star"></i>收藏</span><span class="bold">价格：</span><span class="red2">￥60.00</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="product-title-gray-text">积分：300积分</span></p>-->
+        </div>
+        <div class="my-search-title-panel">
+            <ul class="am-avg-sm-4 am-text-center am-text-sm">
+                <li class="am-text-center">销量<br />{$goods.sales}件</li>
+                <li class="am-text-center">库存<br />{$goods.goodsnum}件</li>
+                <li class="am-text-center">订单<br />{$goods.orders}个</li>
+                <li class="am-text-center">评价<br />{$goods.comment}条</li>
+            </ul>
+        </div>
+        <div class="my-search-title-panel">
+            <p class="my-search-titp-p am-text-sm bold">尺码</p>
+            <p class="size-p" id="sizep">
+                {volist name="size" id="vo"}
+                    <span data-size="{$vo}">{$vo}</span>
+                {/volist}
+            </p>
+            <script>
+                $(document).ready(function(e) {
+                    $("#sizep span").click(function(){
+                        $("#sizep span").removeClass('click');
+                        $(this).addClass('click');
+                        var s = $(this).attr('data-size');
+                        $("#size").val(s);
+                    });
+                    $("#colorp span").click(function(){
+                        $("#colorp span").removeClass('click');
+                        $(this).addClass('click');
+                        var s = $(this).attr('data-color');
+                        $("#color").val(s);
+                    });
+
+                });
+            </script>
+            <hr data-am-widget="divider" style="" class="am-divider-default am-margin-bottom-sm"/>
+            <p class="my-search-titp-p am-text-sm bold">颜色分类</p>
+            <p class="size-p" id="colorp">
+                {volist name="color" id="vo"}
+                <span data-color="{$vo}">{$vo}</span>
+                {/volist}
+            </p>
+            <hr data-am-widget="divider" style="" class="am-divider-default am-margin-bottom-sm"/>
+            <p class="my-search-titp-p am-text-sm bold">数量</p>
+            <div style="overflow:hidden">
+                <form class="am-form-inline" role="form">
+                    <button type="button" class="am-btn am-btn-default" style="float:left" onClick="subtractQty();" ><i class="am-icon-minus"></i></button>
+                    <input type="number" name="txtQty" id="txtQty" class="am-form-field txt-qty am-text-center am-text-sm" value="1" style=" width:60px; margin-right:0px; height:37px; display:inline; float:left" readonly>
+                    <button type="button" class="am-btn am-btn-default" style="float:left" onClick="addQty();"><i class="am-icon-plus"></i></button>
+                </form>
+            </div>
+            <hr data-am-widget="divider" style="" class="am-divider-default am-margin-bottom-sm"/>
+            <div>
+                <ul class="am-avg-sm-2 am-text-center">
+                    <li class="am-text-center am-padding-sm"><button type="button" class="am-btn am-btn-success am-btn-block am-radius" id="shopcart">加入购物车</button></li>
+                    <li class="am-text-center am-padding-sm"><button type="button" class="am-btn am-btn-danger am-btn-block am-radius" id="buy">立即购买</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 商品详情 -->
+    <div data-am-widget="tabs" class="am-tabs am-tabs-d2">
+        <ul class="am-tabs-nav am-cf">
+            <li class="am-active">
+                <a href="[data-tab-panel-0]">详情</a>
+            </li>
+            <li class="">
+                <a href="[data-tab-panel-1]">交易记录</a>
+            </li>
+            <li class="">
+                <a href="[data-tab-panel-2]">评价</a>
+            </li>
+        </ul>
+        <div class="am-tabs-bd">
+            <div data-tab-panel-0 class="am-tab-panel am-active">{$goods.detail}</div>
+            <div data-tab-panel-1 class="am-tab-panel ">
+
+                <ul class="am-list am-list-static am-list-border am-list-striped am-text-sm">
+                    {if condition="$record eq null"}
+                    <p style="text-align: center;">暂无购买记录</p>
+                    {else/}
+                        {volist name="record" id="vo"}
+                        <li>{$vo.name}于{$vo.date}购买成功</li>
+                        {/volist}
+                    {/if}
+                </ul>
+
+            </div>
+            <div data-tab-panel-2 class="am-tab-panel ">
+                <div class="am-cf am-padding-sm" >
+                    <ul class="am-comments-list am-comments-list-flip">
+                        {volist name="comment" id="vo"}
+                        <li class="am-comment">
+                            <a href="">
+                                <img class="am-comment-avatar" src="{$vo.headimg}" alt=""/> <!-- 头像 -->
+                            </a>
+
+                            <div class="am-comment-main">
+                                <header class="am-comment-hd">
+                                    <div class="am-comment-meta">
+                                        <a href="#link-to-user" class="am-comment-author">{$vo.username}</a>
+                                        <time  title="最后的通信时间" class="am-fr">{$vo.time}</time>
+                                    </div>
+                                </header>
+                                <div class="am-comment-bd am-text-sm">
+                                    {$vo.comment}
+                                </div>
+                            </div>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkIsInteger(str)
+        {
+            //如果为空，则通过校验
+            if(str == "")
+                return true;
+            if(/^(\-?)(\d+)$/.test(str))
+                return true;
+            else
+                return false;
+        }
+        var errordialog=function(c){
+            alert(c)
+        }
+
+        //检验商品数量
+        function checkCounts(id) {
+            var Counts = $("#" + id).val();
+            if (Counts == "") {
+                errordialog("请填写数量!");
+                return false;
+            }
+            else if (!checkIsInteger(Counts)) {
+                errordialog("商品数量不是整数!");
+                return false;
+            }
+            else if (Counts < 1) {
+                errordialog("商品数量不能小于1!");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function addQty(){
+            checkCounts('txtQty');
+            var qty = parseInt($('#txtQty').val());
+            $('#txtQty').val(qty+1);
+        }
+        function subtractQty(){
+            checkCounts('txtQty');
+            var qty = parseInt($('#txtQty').val());
+            if(qty <=1){
+                errordialog("商品数量不能小于1");
+                return;
+            }
+            $('#txtQty').val(qty-1);
+        }
+    </script>
+    <script type="text/javascript">
+
+        //加入购物车
+        $('#shopcart').click(function () {
+            var id = $('#goodsid').val();
+            var goodsnum = $('#txtQty').val();
+            var size = $('#sizep').parent().children("#sizep").children('.click').text();
+            var color = $('#colorp').children('.click').text();
+            var wid = $("#wid").val();
+            var score = $('#score').val();
+            var gs = $('.gs').text();
+            if(size == ""){
+                alert("请选择商品尺寸！");
+                return false;
+            }else if(color == ""){
+                alert("请选择商品颜色");
+                return false;
+            }else if(parseInt(score) < parseInt(gs)){
+                alert("您的个人积分不足！");
+                return false;
+            }else{
+                $.ajax({
+                    type: "post",
+                    url:"{:url('good/setin')}",
+                    data: {'id':id, 'goodsnum':goodsnum, 'size':size, 'color':color, 'wid':wid},
+                    dataType: "json",
+                    success:function (data) {
+                        if(data == 1){
+                            alert("加入购物车成功！");
+                            window.location.reload();
+                        }else{
+                            alert("加入购物车失败！");
+                            window.location.reload();
+                        }
+                    }
+                });
+            }
+      })
+
+        //立即购买
+        $("#buy").click(function () {
+            var r = confirm("是否立即购买此商品!");
+            if(r == true){
+                var id = $('#goodsid').val();
+                var goodsnum = $('#txtQty').val();
+                var size = $('#sizep').parent().children("#sizep").children('.click').text();
+                var color = $('#colorp').children('.click').text();
+                var wid = $("#wid").val();
+                var score = $('#score').val();
+                var gs = $('.gs').text();
+                if(size == ""){
+                    alert("请选择商品尺寸！");
+                    return false;
+                }else if(color == ""){
+                    alert("请选择商品颜色");
+                    return false;
+                }else if(parseInt(score) < parseInt(gs)){
+                    alert("您的个人积分不足！");
+                    return false;
+                }else {
+                    $.ajax({
+                        type: "post",
+                        url:"{:url('good/pay')}",
+                        data: {'id':id, 'goodsnum':goodsnum, 'size':size, 'color':color, 'wid':wid},
+                        dataType: "json",
+                        success:function (data) {
+                            var json = eval(data);
+                            if(json.id == 1){
+                                var str = "{:url('good/checkout')}";
+                                var url = str + "?order=" + json.order;
+                                window.location.href = url;
+                            }else{
+                                window.location.reload();
+                            }
+                        }
+                    });
+                }
+            }else{
+                return false;
+            }
+
+        })
+
+
+    </script>
+{include file="public/footer"}

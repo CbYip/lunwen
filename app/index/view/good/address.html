@@ -1,0 +1,126 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="" class="" onclick="window.history.go(-1)">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">收货地址</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+        <div class="paoduct-title-panel">
+            <h2 class="checkout-h2">添加收货地址</h2>
+            <p><i class="am-icon-location-arrow"></i> 收货地址</p>
+            <form class="am-form am-form-inline">
+                <input type="hidden" id="order" value="{$order}" />
+                <input type="hidden" id="wid" value="{$wid}" />
+                <p>
+                    <div class="content-block">
+                        <input id="demo1" type="text" readonly="" placeholder="城市选择"  value="">
+                    </div>
+                </p>
+                <div class="am-form-group">
+                    <input type="text" id="citydetail" class="am-form-field am-radius" placeholder="详细地址">
+                </div>
+                <hr data-am-widget="divider" style="" class="am-divider-default am-margin-bottom-sm"/>
+                <div class="am-form-group am-form-icon">
+                    <i class="am-icon-user"></i>
+                    <input type="text" id="name" class="am-form-field am-radius" placeholder="真实姓名">
+                </div>
+                <div class="am-form-group am-form-icon">
+                    <i class="am-icon-phone"></i>
+                    <input type="text" id="tel" class="am-form-field am-radius" placeholder="手机号码">
+                </div>
+                <div class="am-form-group am-form-icon">
+                    <i class="am-icon-ship"></i>
+                    <input type="text" id="wuliu" class="am-form-field am-radius" placeholder="期望物流(留空或乱填为选择默认物流)">
+                </div>
+                <button type="button" class="am-btn am-btn-danger" id="submit">添加保存</button>
+            </form>
+        </div>
+    </div>
+<script src="__JS__/LAreaData1.js"></script>
+<script src="__JS__/LAreaData2.js"></script>
+<script src="__JS__/LArea.js"></script>
+<script type="text/javascript">
+    var area1 = new LArea();
+    area1.init({
+        'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo': '#value1', //选择完毕后id属性输出到该位置
+        'keys': {
+            id: 'id',
+            name: 'name'
+        }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type': 1, //数据源类型
+        'data': LAreaData //数据源
+    });
+    area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+    var area2 = new LArea();
+    area2.init({
+        'trigger': '#demo2',
+        'valueTo': '#value2',
+        'keys': {
+            id: 'value',
+            name: 'text'
+        },
+        'type': 2,
+        'data': [provs_data, citys_data, dists_data]
+    });
+</script>
+<script type="text/javascript">
+    $("#submit").click(function () {
+        var city = $('#demo1').val();
+        var citydetail = $('#citydetail').val();
+        var code = $('#code').val();
+        var name = $('#name').val();
+        var tel = $('#tel').val();
+        var wuliu = $('#wuliu').val();
+        var order = $('#order').val();
+        var wid = $('#wid').val();
+        //验证中文字符
+        var pattern = /^[\u4E00-\u9FA5]{2,4}$/;
+        //验证手机号码
+        var tele = /^1[34578]\d{9}$/;
+
+        if(name == "" || pattern.test(name) == false){
+            alert("请输入您的姓名！");
+            return false;
+        }else if(tel.length != "11" || tele.test(tel) == false){
+            alert("请输入正确的手机号码！");
+            return false;
+        }else if(city == ""){
+            alert("请选择地址信息！")
+            return false;
+        }else if(citydetail == ""){
+            alert("请输入您的详细地址！");
+            return false
+        }else {
+            $.ajax({
+                type: "post",
+                url: "{:url('good/address')}",
+                data: {"city": city, "citydetail": citydetail, "code": code, "name": name, "tel": tel, "wuliu": wuliu, 'wid':wid},
+                dataType: "json",
+                success: function (data) {
+                    if (data == 1) {
+                        alert("地址添加成功！");
+                        var str = "{:url('good/checkout')}";
+                        var url = str + "?order=" + order;
+                        window.location.href=url;
+                    } else {
+                        alert("地址添加失败！")
+                        return false;
+                    }
+                }
+            })
+        }
+    })
+</script>
+    {include file="public/footer"}

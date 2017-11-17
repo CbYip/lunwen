@@ -1,0 +1,97 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="#left-link" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">订单详情</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+    {include file="public/nav"}
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="/">首页</a></li>
+            <li>订单详情</li>
+        </ol>
+    </div>
+    <div class="am-cf cart-panel">
+        <input type="hidden" id="ID" value="{$detail.ID}"/>
+        <div class="withdrawals-panel">
+            <p class="groupby-t-p"><span class="am-fr">{$detail.ftime}</span>订单号：{$detail.order}</p>
+            <input type="hidden" id="order" value="{$detail.order}" />
+            <hr  class="am-divider am-divider-default am-cf"/>
+            <div class="groupby-info-panle">
+                <h2>题目：{$detail.title}</h2>
+                <p class="dt">姓名：{$detail.username}</p>
+                <p class="dt">联系方式：{$detail.usertel}</p>
+                {if condition="$detail.service eq 1"}
+                <p class="dt">订单类型：<span class="am-text-success">文稿代写</span></p>
+                <p class="dt">文稿字数：{$detail.word}</p>
+                <p class="dt">文稿类型：{$detail.type}</p>
+                <p class="dt">专业方向：{$detail.major}</p>
+                <p class="dt" id="ctime">完成时间：{$detail.ctime}</p>
+                <p class="dt" id="require">具体需求：{$detail.require}</p>
+                {elseif condition="$detail.service eq 2"/}
+                <p class="dt">订单类型：<span class="am-text-success">期刊发表</span></p>
+                <p class="dt">论文字数：{$detail.word}</p>
+                {if condition="$detail.level eq 0"}
+                <p class="dt">期刊级别：省级期刊</p>
+                {elseif condition="$detail.level eq 1"/}
+                <p class="dt">期刊级别：国家级级期刊</p>
+                {elseif condition="$detail.level eq 2"/}
+                <p class="dt">期刊级别：科技核心期刊</p>
+                {elseif condition="$detail.level eq 3"/}
+                <p class="dt">期刊级别：中文核心期刊</p>
+                {elseif condition="$detail.level eq 4"/}
+                <p class="dt">期刊级别：cssci核心期刊</p>
+                {elseif condition="$detail.level eq 5"/}
+                <p class="dt">期刊级别：EI/SCI期刊</p>
+                {else/}
+                <p class="dt">期刊级别：暂不确定</p>
+                {/if}
+                <p class="dt" id="ctime">发表日期：{$detail.ctime}</p>
+                <p class="dt" id="require">其他要求：{$detail.require}</p>
+                {elseif condition="$detail.service eq 3"/}
+                <p class="dt">订单类型：<span class="am-text-success">论文修改</span></p>
+                <p class="dt">论文字数：{$detail.word}</p>
+                <p class="dt" id="ctime">完成时间：{$detail.ctime}</p>
+                <p class="dt" id="require">修改意见：{$detail.require}</p>
+                {else/}
+                <p class="dt">订单类型：<span class="am-text-success">包写包发</span></p>
+                <p class="dt">论文字数：{$detail.word}</p>
+                <p class="dt" id="ctime">发表时间：{$detail.ctime}</p>
+                <p class="dt" id="require">具体需求：{$detail.require}</p>
+                {/if}
+                <p id="btn"><button type="button" id="demand" class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius order-detail-btn">我要接单</button></p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#demand').click(function () {
+                var order = $('#order').val();
+                $.ajax({
+                    type: "POST",
+                    url: "{:url('member/accept_detail')}",
+                    data: {"order":order},
+                    dataType: "json",
+                    success: function (data) {
+                        if(data == 1){
+                            window.location.reload();
+                            return ;
+                        }else{
+                            alert("订单接受失败");
+                        }
+                    }
+                })
+            });
+        </script>
+    </div>
+    {include file="public/footer"}

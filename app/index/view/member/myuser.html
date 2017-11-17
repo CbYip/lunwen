@@ -1,0 +1,72 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="" class="" onclick="window.history.go(-1)">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">我的资料</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="{:url('good/shopcart')}" class="">
+                <i class="am-header-icon  am-icon-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+    <!--头部导航-->
+    {include file="public/nav"}
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="{:url('member/index')}">首页</a></li>
+            <li>我的资料</li>
+        </ol>
+    </div>
+    <div class="am-cf cart-panel">
+        <div class="withdrawals-panel">
+            <input type="hidden" id="wid" value="{$user.WID}"/>
+            <div class="partners-title-panel">
+                <div class="partners-title-panel-title"><i class="am-icon-chevron-circle-right"></i><input type="text" name="username" value="姓名：{$user.name}" style="border: none; background: none; vertical-align: inherit;"></div>
+            </div>
+            <div class="partners-title-panel">
+                <div class="partners-title-panel-title"><i class="am-icon-chevron-circle-right"></i><input type="text" name="tel" value="电话：{$user.tel}" style="border: none; background: none; vertical-align: inherit;"></div>
+            </div>
+            <div class="partners-title-panel">
+                <div class="partners-title-panel-title"><i class="am-icon-chevron-circle-right"></i>微信会员ID：{$user.WID}</div>
+            </div>
+            <div class="partners-title-panel">
+                <div class="partners-title-panel-title"><i class="am-icon-chevron-circle-right"></i>积分：{$user.score}</div>
+            </div>
+            <div class="partners-title-panel">
+                <div class="partners-title-panel-title"><i class="am-icon-chevron-circle-right"></i>注册时间：{$user.date}</div>
+            </div>
+            <p>注：个人资料只可修改姓名、电话</p>
+            <button type="button" id="demand" class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius" style="margin-left: 39%;">保存修改</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('#demand').click(function () {
+            var wid = $("#wid").val();
+            var name = $("input[name='username']").val();
+            var tel = $("input[name='tel']").val();
+
+            $.ajax({
+                type: "POST",
+                url: "{:url('member/myuser')}",
+                data: {"wid":wid, "name":name, "tel":tel},
+                dataType: "json",
+                success:function (data) {
+                    if(data != 0){
+                        alert("保存修改成功！");
+                        window.location.reload();
+                    }else{
+                        window.location.reload();
+                    }
+                }
+            })
+        })
+    </script>
+{include file="public/footer"}

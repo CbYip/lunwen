@@ -1,0 +1,264 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        商品列表
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="/admin.php" class="am-icon-home">首页</a></li>
+        <li class="am-active">商品列表</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="portlet-title">
+            <div class="caption font-green bold">
+                <span class="am-icon-code"></span> 列表
+            </div>
+        </div>
+        <div class="tpl-block">
+            <div>
+                <div class="am-u-sm-12 am-u-md-6">
+                    <div class="am-btn-toolbar">
+                        <div class="am-btn-group am-btn-group-xs">
+                            <button type="button" class="am-btn am-btn-default am-btn-success" onclick="window.location.href='{:url(\'goods/goods_add\')}'"><span class="am-icon-plus"></span> 新增</button>
+                            <button type="button" class="am-btn am-btn-default am-btn-danger delete"><span class="am-icon-trash-o"></span> 删除</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-u-sm-12 am-u-md-3">
+                    <div class="am-form-group">
+                        <select id="selectType">
+                            <option value="0">所有类别</option>
+                            {volist name="type" id="vo"}
+                            <option value="{$vo.ID}">{$vo.typename}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <form class="am-form">
+                        <table class="am-table am-table-striped am-table-hover table-main">
+                            <thead>
+                            <tr>
+                                <th class="table-check"><input type="checkbox" class="tpl-table-fz-check"></th>
+                                <th class="table-id">ID</th>
+                                <th class="table-title">商品名称</th>
+                                <th class="table-num">库存</th>
+                                <th class="table-price am-hide-sm-only">单价</th>
+                                <th class="table-date am-hide-sm-only">单积分</th>
+                                <th class="table-type">品牌</th>
+                                <th class="table-flag">商品状态</th>
+                                <th class="table-sales">销量</th>
+                                <th class="table-orders">订单</th>
+                                <th class="table-comment">评论</th>
+                                <th class="table-type">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="shoplist">
+                            {volist name="goods" id="vo1"}
+                            <tr>
+                                <td><input type="checkbox" class="check"></td>
+                                <td><?php echo $i;?></td>
+                                <td><a href="{:url('goods/edit', ['id' => $vo1.ID])}">{$vo1.goodsname}</a></td>
+                                <td>{$vo1.goodsnum}</td>
+                                <td class="am-hide-sm-only">{$vo1.goodsprice}</td>
+                                <td>{$vo1.score}</td>
+                                <td class="am-hide-sm-only">{$vo1.type}</td>
+                                {if condition="$vo1.flag eq 0"}
+                                <td class="caozuo">未上架</td>
+                                {else/}
+                                <td class="caozuo">已上架</td>
+                                {/if}
+                                <td>{$vo1.sales}</td>
+                                <td>{$vo1.orders}</td>
+                                <td>{$vo1.comment}</td>
+                                <td>
+                                    <div class="am-btn-toolbar">
+                                        <div class="am-btn-group am-btn-group-xs">
+                                            <input type="hidden" id="ID" name="id" value="{$vo1.ID}"/>
+                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary edit"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-success up"><span class="am-icon-arrow-circle-o-up"></span> 上架</button>
+                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-warning down"><span class="am-icon-arrow-circle-o-down"></span> 下架</button>
+                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only del"><span class="am-icon-trash-o"></span> 删除</button>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+                        <div class="am-cf">
+                            <div class="am-fr">
+                                {$goods->render()}
+                            </div>
+                        </div>
+                        <hr>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="tpl-alert"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('.edit').click(function () {
+        var ID = $(this).parent().children('#ID').val();
+        url = "{:url('goods/goods_edit')}";
+        str = url + '?id=' +ID;
+        window.location.href=str;
+    })
+
+    //全选或取消
+    $(".tpl-table-fz-check").click(function () {
+            if($(this).is(":checked")){
+                $('.check').prop("checked", true);
+            }else{
+                $('.check').prop("checked", false);
+            }
+        }
+    )
+
+    //批量删除
+    $(".delete").click(function () {
+        var temp = "";
+        $(".check:checked").each(function () {
+            var tablerow = $(this).parent().parent("tr");
+            var id = tablerow.find("input[name='id']").val();
+            temp += id + ",";
+        });
+        $.ajax({
+            type: "post",
+            url: "{:url('goods/gdelete')}",
+            data: {'temp':temp},
+            datatype: "json",
+            success:function (data) {
+                if(data == 0){
+                    alert("删除失败!");
+                    window.location.href="{:url('goods/goods_type')}";
+                }else{
+                    alert("删除成功！");
+                    window.location.reload();
+                }
+            }
+        })
+    })
+
+    //单个删除
+    $('.shoplist').on(  'click','.del',function () {
+        var id = $(this).parent().children("#ID").val();
+        $.ajax({
+            type: "post",
+            url: "{:url('goods/gdel')}",
+            data: {"id":id},
+            dataType:"json",
+            success:function (data) {
+                if(data != 0){
+                    alert("删除成功！");
+                    window.location.reload();
+                }else{
+                    alert("删除失败！");
+                    window.location.reload();
+                }
+            }
+        });
+    })
+
+    //上架
+    $('.shoplist').on("click", ".up", function () {
+        var id = $(this).parent().children("#ID").val();
+        var flag = 1;
+        var caozuo = $(this).parent().parent().parent().parent().children('.caozuo');
+        $.ajax({
+            type: "post",
+            url: "{:url('goods/caozuo')}",
+            data: {"id":id, "flag":flag},
+            success:function (data) {
+                if(data != 0){
+                    caozuo.empty();
+                    alert("商品上架成功！");
+                    var content = "已上架";
+                    caozuo.append(content);
+                }else{
+                    alert("商品上架失败！");
+                    return false;
+                }
+            }
+        })
+    })
+
+    //商品下架
+    $('.shoplist').on("click", ".down", function () {
+        var id = $(this).parent().children("#ID").val();
+        var flag = 0;
+        var caozuo = $(this).parent().parent().parent().parent().children('.caozuo');
+        $.ajax({
+            type: "post",
+            url: "{:url('goods/caozuo')}",
+            data: {"id":id, "flag":flag},
+            success:function (data) {
+                if(data != 0){
+                    caozuo.empty();
+                    alert("商品下架成功！");
+                    var content = "未上架";
+                    caozuo.append(content);
+                }else{
+                    alert("商品下架失败！");
+                    return false;
+                }
+            }
+        })
+    })
+
+    //商品分类筛选
+    $("#selectType").change(function () {
+        var id = $(this).val();
+        $.ajax({
+           type: "post",
+           url: "{:url('goods/type')}",
+            data: {"id":id},
+            success:function (data) {
+                var json = eval(data);
+                var content = "";
+                $('.shoplist').empty();
+                for(var i = 0; i<json.length; i++){
+                    var str = "{:url('goods/edit')}";
+                    var url = str + "?id=" + json[i].ID;
+                    content += '<tr>\n' +
+                        '                                <td><input type="checkbox" class="check"></td>\n' +
+                        '                                <td><?php echo $i;?></td>\n' +
+                        '                                <td><a href="'+ url +'">'+ json[i].goodsname +'</a></td>\n' +
+                        '                                <td>'+ json[i].goodsnum +'</td>\n' +
+                        '                                <td class="am-hide-sm-only">'+ json[i].goodsprice +'</td>\n' +
+                        '                                <td>'+ json[i].score +'</td>\n' +
+                        '                                <td class="am-hide-sm-only">'+ json[i].type +'</td>';
+                    if(json[i].flag == 0){
+                        content += '<td class="caozuo">未上架</td>';
+                    }else{
+                        content += '<td class="caozuo">已上架</td>';
+                    }
+                    content += '<td>'+ json[i].sales +'</td>\n' +
+                        '                                <td>'+ json[i].orders +'</td>\n' +
+                        '                                <td>'+ json[i].comment +'</td>\n' +
+                        '                                <td>\n' +
+                        '                                    <div class="am-btn-toolbar">\n' +
+                        '                                        <div class="am-btn-group am-btn-group-xs">\n' +
+                        '                                            <input type="hidden" id="ID" name="id" value="{$vo1.ID}"/>\n' +
+                        '                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary edit"><span class="am-icon-pencil-square-o"></span> 编辑</button>\n' +
+                        '                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-success up"><span class="am-icon-arrow-circle-o-up"></span> 上架</button>\n' +
+                        '                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-warning down"><span class="am-icon-arrow-circle-o-down"></span> 下架</button>\n' +
+                        '                                            <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only del"><span class="am-icon-trash-o"></span> 删除</button>\n' +
+                        '                                        </div>\n' +
+                        '                                    </div>\n' +
+                        '                                </td>\n' +
+                        '                            </tr>';
+                }
+                $('.shoplist').append(content);
+            }
+        });
+    })
+</script>
+{include file="public/footer"}

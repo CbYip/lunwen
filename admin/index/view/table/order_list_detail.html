@@ -1,0 +1,474 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        论文订单列表
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="#" class="am-icon-home">首页</a></li>
+        <li class="am-active">论文订单列表</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="portlet-title">
+            <div class="caption font-green bold">
+                <span class="am-icon-code"></span> 表单
+            </div>
+        </div>
+        <div class="tpl-block ">
+            <div class="am-g tpl-amazeui-form">
+                <div class="am-u-sm-12 am-u-md-9">
+                    <form class="am-form am-form-horizontal" method="post">
+                        <div class="am-form-group">
+                            <label for="order" class="am-u-sm-3 am-form-label">订单号 / Order</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="order" name="order" value="{$detail.order}" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="title" class="am-u-sm-3 am-form-label">题目 / Title</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="title" name="Title" value="{$detail.title}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="username" class="am-u-sm-3 am-form-label">姓名 / Name</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="username" name="Name" value="{$detail.username}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="usertel" class="am-u-sm-3 am-form-label">联系方式 / Tel</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="usertel" name="Tel" value="{$detail.usertel}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="username" class="am-u-sm-3 am-form-label">金额 / Price</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="price" name="Price" value="{$detail.price}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="word" class="am-u-sm-3 am-form-label">字数要求 / Word</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="word" name="Word" value="{$detail.word}">
+                            </div>
+                        </div>
+                        {if condition="$detail.service eq 1"}
+                            <div class="am-form-group">
+                                <label for="service" class="am-u-sm-3 am-form-label">服务条项 / Service</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-1" name="service" >
+                                        <option value="1" selected="selected">文稿代写</option>
+                                        <option value="2">期刊发表</option>
+                                        <option value="3">论文修改</option>
+                                        <option value="4">包写包发</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="ctime" class="am-u-sm-3 am-form-label">完成时间 / Ctime</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="ctime" name="Ctime" value="{$detail.ctime}">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="Type" class="am-u-sm-3 am-form-label">文稿要求 / Type</label>
+                                <div class="am-u-sm-9">
+                                        <input type="text" id="Type" name="Type" value="{$detail.type}">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="major" class="am-u-sm-3 am-form-label">专业方向 / Major</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="major" name="Major" value="{$detail.major}">
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="require" class="am-u-sm-3 am-form-label">具体需求 / Require</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" name="Require" id="require">{$detail.require}</textarea>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="repeat" class="am-u-sm-3 am-form-label">重复率要求 / Repeat</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" name="repeat" id="repeat">{$detail.repeat}</textarea>
+                                </div>
+                            </div>
+                        {elseif condition="$detail.service eq 2"/}
+                            <div class="am-form-group">
+                                <label for="service" class="am-u-sm-3 am-form-label">服务条项 / Service</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-1" name="service" >
+                                        <option value="1">文稿代写</option>
+                                        <option value="2" selected="selected">期刊发表</option>
+                                        <option value="3">论文修改</option>
+                                        <option value="4">包写包发</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="fatime" class="am-u-sm-3 am-form-label">发表时间 / Fatime</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="fatime" name="fatime" value="{$detail.fatime}">
+                                </div>
+                            </div>
+                            {if condition="$detail.level eq 0"}
+                                <div class="am-form-group">
+                                    <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                    <div class="am-u-sm-9">
+                                        <select id="doc-select-2" name="level" >
+                                            <option value="0" selected="selected">省级期刊</option>
+                                            <option value="1">国家级期刊</option>
+                                            <option value="2">科技核心期刊</option>
+                                            <option value="3">中文核心期刊</option>
+                                            <option value="4">cssci核心期刊</option>
+                                            <option value="5">EI/SCI核心期刊</option>
+                                            <option value="6">暂不确定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            {elseif condition="$detail.level eq 1"/}
+                                <div class="am-form-group">
+                                    <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                    <div class="am-u-sm-9">
+                                        <select id="doc-select-2" name="level" >
+                                            <option value="0">省级期刊</option>
+                                            <option value="1" selected="selected">国家级期刊</option>
+                                            <option value="2">科技核心期刊</option>
+                                            <option value="3">中文核心期刊</option>
+                                            <option value="4">cssci核心期刊</option>
+                                            <option value="5">EI/SCI核心期刊</option>
+                                            <option value="6">暂不确定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            {elseif condition="$detail.level eq 2"/}
+                                <div class="am-form-group">
+                                    <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                    <div class="am-u-sm-9">
+                                        <select id="doc-select-2" name="level" >
+                                            <option value="0">省级期刊</option>
+                                            <option value="1">国家级期刊</option>
+                                            <option value="2" selected="selected">科技核心期刊</option>
+                                            <option value="3">中文核心期刊</option>
+                                            <option value="4">cssci核心期刊</option>
+                                            <option value="5">EI/SCI核心期刊</option>
+                                            <option value="6">暂不确定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            {elseif condition="$detail.level eq 3"/}
+                                <div class="am-form-group">
+                                    <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                    <div class="am-u-sm-9">
+                                        <select id="doc-select-2" name="level" >
+                                            <option value="0">省级期刊</option>
+                                            <option value="1">国家级期刊</option>
+                                            <option value="2">科技核心期刊</option>
+                                            <option value="3" selected="selected">中文核心期刊</option>
+                                            <option value="4">cssci核心期刊</option>
+                                            <option value="5">EI/SCI核心期刊</option>
+                                            <option value="6">暂不确定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            {elseif condition="$detail.level eq 4"/}
+                                <div class="am-form-group">
+                                    <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                    <div class="am-u-sm-9">
+                                        <select id="doc-select-2" name="level" >
+                                            <option value="0">省级期刊</option>
+                                            <option value="1">国家级期刊</option>
+                                            <option value="2">科技核心期刊</option>
+                                            <option value="3">中文核心期刊</option>
+                                            <option value="4" selected="selected">cssci核心期刊</option>
+                                            <option value="5">EI/SCI核心期刊</option>
+                                            <option value="6">暂不确定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            {elseif condition="$detail.level eq 5"/}
+                                <div class="am-form-group">
+                                    <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                    <div class="am-u-sm-9">
+                                        <select id="doc-select-2" name="level" >
+                                            <option value="0">省级期刊</option>
+                                            <option value="1">国家级期刊</option>
+                                            <option value="2">科技核心期刊</option>
+                                            <option value="3">中文核心期刊</option>
+                                            <option value="4">cssci核心期刊</option>
+                                            <option value="5" selected="selected">EI/SCI核心期刊</option>
+                                            <option value="6">暂不确定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            {else/}
+                                <div class="am-form-group">
+                                    <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                    <div class="am-u-sm-9">
+                                        <select id="doc-select-2" name="level" >
+                                            <option value="0">省级期刊</option>
+                                            <option value="1">国家级期刊</option>
+                                            <option value="2">科技核心期刊</option>
+                                            <option value="3">中文核心期刊</option>
+                                            <option value="4">cssci核心期刊</option>
+                                            <option value="5">EI/SCI核心期刊</option>
+                                            <option value="6" selected="selected">暂不确定</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            {/if}
+                            <div class="am-form-group">
+                                <label for="require" class="am-u-sm-3 am-form-label">其他要求 / Require</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" id="require" name="Require">{$detail.require}</textarea>
+                                </div>
+                            </div>
+                        {elseif condition="$detail.service eq 3"/}
+                            <div class="am-form-group">
+                                <label for="service" class="am-u-sm-3 am-form-label">服务条项 / Service</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-1" name="service" >
+                                        <option value="1">文稿代写</option>
+                                        <option value="2">期刊发表</option>
+                                        <option value="3" selected="selected">论文修改</option>
+                                        <option value="4">包写包发</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="ctime" class="am-u-sm-3 am-form-label">修改完成时间 / Ctime</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="ctime" name="Ctime" value="{$detail.ctime}">
+                                </div>
+                            </div>
+                            {if condition="$detail.modify eq 0"}
+                            <div class="am-form-group">
+                                <label for="modify" class="am-u-sm-3 am-form-label">论文修改类型 / Modify</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="modify" >
+                                        <option value="0" selected="selected">按意见修改内容</option>
+                                        <option value="1">降低论文重复率</option>
+                                        <option value="2">修改论文格式</option>
+                                        <option value="3">整体润色修改</option>
+                                        <option value="4">其他修改</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.modify eq 1"/}
+                            <div class="am-form-group">
+                                <label for="modify" class="am-u-sm-3 am-form-label">论文修改类型 / Modify</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="modify" >
+                                        <option value="0">按意见修改内容</option>
+                                        <option value="1" selected="selected">降低论文重复率</option>
+                                        <option value="2">修改论文格式</option>
+                                        <option value="3">整体润色修改</option>
+                                        <option value="4">其他修改</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="nowrep" class="am-u-sm-3 am-form-label">当前重复率 / Nowrep</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" name="nowrep" id="nowrep">{$detail.nowrep}</textarea>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="repeat" class="am-u-sm-3 am-form-label">修改后重复率 / Repeat</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" name="repeat" id="repeat">{$detail.repeat}</textarea>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.modify eq 2"/}
+                            <div class="am-form-group">
+                                <label for="modify" class="am-u-sm-3 am-form-label">论文修改类型 / Modify</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="modify" >
+                                        <option value="0">按意见修改内容</option>
+                                        <option value="1">降低论文重复率</option>
+                                        <option value="2" selected="selected">修改论文格式</option>
+                                        <option value="3">整体润色修改</option>
+                                        <option value="4">其他修改</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.modify eq 3"/}
+                            <div class="am-form-group">
+                                <label for="modify" class="am-u-sm-3 am-form-label">论文修改类型 / Modify</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="modify" >
+                                        <option value="0">按意见修改内容</option>
+                                        <option value="1">降低论文重复率</option>
+                                        <option value="2">修改论文格式</option>
+                                        <option value="3" selected="selected">整体润色修改</option>
+                                        <option value="4">其他修改</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {else/}
+                            <div class="am-form-group">
+                                <label for="modify" class="am-u-sm-3 am-form-label">论文修改类型 / Modify</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="modify" >
+                                        <option value="0">按意见修改内容</option>
+                                        <option value="1">降低论文重复率</option>
+                                        <option value="2">修改论文格式</option>
+                                        <option value="3">整体润色修改</option>
+                                        <option value="4" selected="selected">其他修改</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {/if}
+                            <div class="am-form-group">
+                                <label for="require" class="am-u-sm-3 am-form-label">修改意见 / Require</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" id="require" name="Require">{$detail.require}</textarea>
+                                </div>
+                            </div>
+                        {else/}
+                            <div class="am-form-group">
+                                <label for="service" class="am-u-sm-3 am-form-label">服务条项 / Service</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-1" name="service" >
+                                        <option value="1">文稿代写</option>
+                                        <option value="2">期刊发表</option>
+                                        <option value="3">论文修改</option>
+                                        <option value="4" selected="selected">包写包发</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="am-form-group">
+                                <label for="fatime" class="am-u-sm-3 am-form-label">发表时间 / Fatime</label>
+                                <div class="am-u-sm-9">
+                                    <input type="text" id="fatime" name="fatime" value="{$detail.fatime}">
+                                </div>
+                            </div>
+                            {if condition="$detail.level eq 0"}
+                            <div class="am-form-group">
+                                <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="level" >
+                                        <option value="0" selected="selected">省级期刊</option>
+                                        <option value="1">国家级期刊</option>
+                                        <option value="2">科技核心期刊</option>
+                                        <option value="3">中文核心期刊</option>
+                                        <option value="4">cssci核心期刊</option>
+                                        <option value="5">EI/SCI核心期刊</option>
+                                        <option value="6">暂不确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.level eq 1"/}
+                            <div class="am-form-group">
+                                <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="level" >
+                                        <option value="0">省级期刊</option>
+                                        <option value="1" selected="selected">国家级期刊</option>
+                                        <option value="2">科技核心期刊</option>
+                                        <option value="3">中文核心期刊</option>
+                                        <option value="4">cssci核心期刊</option>
+                                        <option value="5">EI/SCI核心期刊</option>
+                                        <option value="6">暂不确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.level eq 2"/}
+                            <div class="am-form-group">
+                                <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="level" >
+                                        <option value="0">省级期刊</option>
+                                        <option value="1">国家级期刊</option>
+                                        <option value="2" selected="selected">科技核心期刊</option>
+                                        <option value="3">中文核心期刊</option>
+                                        <option value="4">cssci核心期刊</option>
+                                        <option value="5">EI/SCI核心期刊</option>
+                                        <option value="6">暂不确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.level eq 3"/}
+                            <div class="am-form-group">
+                                <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="level" >
+                                        <option value="0">省级期刊</option>
+                                        <option value="1">国家级期刊</option>
+                                        <option value="2">科技核心期刊</option>
+                                        <option value="3" selected="selected">中文核心期刊</option>
+                                        <option value="4">cssci核心期刊</option>
+                                        <option value="5">EI/SCI核心期刊</option>
+                                        <option value="6">暂不确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.level eq 4"/}
+                            <div class="am-form-group">
+                                <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="level" >
+                                        <option value="0">省级期刊</option>
+                                        <option value="1">国家级期刊</option>
+                                        <option value="2">科技核心期刊</option>
+                                        <option value="3">中文核心期刊</option>
+                                        <option value="4" selected="selected">cssci核心期刊</option>
+                                        <option value="5">EI/SCI核心期刊</option>
+                                        <option value="6">暂不确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {elseif condition="$detail.level eq 5"/}
+                            <div class="am-form-group">
+                                <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="level" >
+                                        <option value="0">省级期刊</option>
+                                        <option value="1">国家级期刊</option>
+                                        <option value="2">科技核心期刊</option>
+                                        <option value="3">中文核心期刊</option>
+                                        <option value="4">cssci核心期刊</option>
+                                        <option value="5" selected="selected">EI/SCI核心期刊</option>
+                                        <option value="6">暂不确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {else/}
+                            <div class="am-form-group">
+                                <label for="Level" class="am-u-sm-3 am-form-label">期刊级别 / Level</label>
+                                <div class="am-u-sm-9">
+                                    <select id="doc-select-2" name="level" >
+                                        <option value="0">省级期刊</option>
+                                        <option value="1">国家级期刊</option>
+                                        <option value="2">科技核心期刊</option>
+                                        <option value="3">中文核心期刊</option>
+                                        <option value="4">cssci核心期刊</option>
+                                        <option value="5">EI/SCI核心期刊</option>
+                                        <option value="6" selected="selected">暂不确定</option>
+                                    </select>
+                                </div>
+                            </div>
+                            {/if}
+                            <div class="am-form-group">
+                                <label for="require" class="am-u-sm-3 am-form-label">具体要求 / Require</label>
+                                <div class="am-u-sm-9">
+                                    <textarea type="text" id="require" name="Require">{$detail.require}</textarea>
+                                </div>
+                            </div>
+                        {/if}
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{include file="public/footer"}

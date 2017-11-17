@@ -1,0 +1,19 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav am-dropdown"  data-am-dropdown>
+            <a href="javascript:;" class="am-dropdown-toggle"  data-am-dropdown-toggle>
+                <i class="am-header-icon am-icon-th-large"></i>
+            </a>
+            {include file="public/header_nav"}
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">联系方式</a>
+        </h1>
+    </header>
+
+    <div class="am-cf am-g" style="width: 94%;">
+        {$contact}
+    </div>
+{include file="public/footer"}

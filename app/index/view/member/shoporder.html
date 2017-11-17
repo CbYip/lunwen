@@ -1,0 +1,175 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="{:url('member/index')}" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">商城订单</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="{:url('good/shopcart')}" class="">
+                <i class="am-header-icon  am-icon-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+    {include file="public/nav"}
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="{:url('member/index')}">首页</a></li>
+            <li>商城订单</li>
+        </ol>
+    </div>
+    <div class="am-cf cart-panel">
+        <input type="hidden" id="headimg" value="{$mem.headimgurl}" />
+        <input type="hidden" id="wid" value="{$user.WID}" />
+        <input type="hidden" id="username" value="{$mem.nickname}" />
+        {volist name="shoporder" id="vo"}
+        <input type="hidden" id="goodsname" value="{$vo.goodsname}" />
+            <div class="withdrawals-panel ">
+                <p class="groupby-t-p"><span class="am-fr">{$vo.time}</span>订单号：{$vo.ordernumber}</p>
+                <input type="hidden" id="order" value="{$vo.ordernumber}" />
+                {volist name="$vo.goods" id="vo1"}
+                <hr  class="am-divider am-divider-default am-cf"/>
+                <div class="groupby-img-panle"><a href="#"><img src="{$vo1.photo}" class="am-img-responsive img" /></a></div>
+                <div class="groupby-info-panle info-width">
+                    <h3>{$vo1.goodsname}</h3>
+                    <p>单价：<span class="red2 bold">{$vo1.goodsprice}</span> 元 &nbsp; &nbsp;&nbsp;  积分：<span class="am-text-success">{$vo1.goodsscore}</span></p>
+                    {if condition="$vo.shopflag eq 0"}
+                    <p>订单状态：未发货&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：{$vo1.num}</p>
+                    {elseif condition="$vo.shopflag eq 1"/}
+                    <p>订单状态：已发货&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：{$vo1.num}</p>
+                    {else/}
+                    <p>订单状态：已收货&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数量：{$vo1.num}</p>
+                    {/if}
+                </div>
+                {/volist}
+                {if condition="$vo.flag eq 0"}
+                <span style="margin-left: 1%;">&nbsp;&nbsp;状态：<span class="am-text-success">未付款</span></span>
+                {else/}
+                <span style="margin-left: 1%;">&nbsp;&nbsp;状态：<span class="am-text-success">已付款</span></span>
+                {/if}
+                <br>
+                <br>
+                {if condition="$vo.flag eq 0"}
+                <p><a href="{:url('good/checkout', ['order' => $vo.ordernumber])}" class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius" style="margin-left: 40%;">付款</a> <a href="javascript:;" class="am-btn am-btn-primary am-btn-xs am-btn-danger am-radius cancel">取消订单</a>
+                {elseif condition="($vo.flag eq 1) and ($vo.shopflag eq 0)"/}
+                <p><a href="javascript:;" class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius cuicu" style="margin-left: 40%;">催促发货</a> <a href="javascript:;" class="am-btn am-btn-primary am-btn-xs am-btn-danger am-radius detail">订单详情</a></p>
+                {elseif condition="($vo.flag eq 1) and ($vo.shopflag eq 1)"/}
+                <p><a href="javascript:;" class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius receipt" style="margin-left: 40%;">确认收货</a> <a href="javascript:;" class="am-btn am-btn-primary am-btn-xs am-btn-danger am-radius detail">订单详情</a></p>
+                {elseif condition="($vo.flag eq 1) and ($vo.shopflag eq 2) and ($vo.comment eq 0)"/}
+                <p><button class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius comment" style="margin-left: 40%;">评价</button> <a href="javascript:;" class="am-btn am-btn-primary am-btn-xs am-btn-danger am-radius detail">订单详情</a></p>
+                <p class="com" style="float: right; margin-right: 17%"></p>
+                {else/}
+                <p><a href="javascript:;" class="am-btn am-btn-primary am-btn-xs am-btn-danger am-radius detail" style="margin-left: 40%;">订单详情</a></p>
+                {/if}
+            </div>
+        {/volist}
+        <div style="">
+        {$shoporder->render()}
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.detail').click(function () {
+            var order = $(this).parent().parent().children('#order').val();
+            var str = "{:url('member/shoporder_detail')}";
+            var url = str + "?order=" + order;
+            window.location.href=url;
+        })
+
+        //取消订单
+        $('.cancel').click(function () {
+            if(confirm("是否取消订单？")){
+                var order = $(this).parent().parent().children("#order").val();
+                $.ajax({
+                    type: "post",
+                    url: "{:url('member/cancel')}",
+                    data: {"order":order},
+                    dataType: "json",
+                    success:function (data) {
+                        if(data != 0){
+                            alert("您已成功取消订单！");
+                            window.location.reload();
+                        }else {
+                            return false;
+                        }
+                    }
+                })
+            }else{
+                return false;
+            }
+        })
+
+        //确认收货
+        $('.receipt').click(function () {
+            var order = $(this).parent().parent().children("#order").val();
+            var r = confirm("是否确认收货？");
+            if(r === true){
+                $.ajax({
+                    type: "post",
+                    url: "{:url('good/receipt')}",
+                    data: {"order":order},
+                    dataType: "json",
+                    success:function (data) {
+                        if(data != 0){
+                            window.location.reload();
+                        }else {
+                            return false;
+                        }
+                    }
+                })
+            }else{
+                return false;
+            }
+        })
+
+        var i = 1;
+        //评价
+        $(".comment").click(function () {
+            if(i == 1){
+                $(".com").empty();
+                var content = "";
+                content = "<textarea class='comt'></textarea><br/>" +
+                    "<button type=\"button\" class=\"am-btn am-btn-primary am-radius am-btn-xs sub\" style='margin-top: 5%;'>提交</button>";
+                $(this).parent().parent().children('.com').append(content);
+
+                i = 0;
+            }else{
+                $(".com").empty();
+                i = 1;
+            }
+        });
+
+        $('.com').on('click', '.sub', function () {
+            var content = $('.comt').val();
+            var order = $(this).parent().parent().children('#order').val();
+            var headimg = $(this).parent().parent().parent().children('#headimg').val();
+            var wid = $(this).parent().parent().parent().children('#wid').val();
+            var goodsname = $(this).parent().parent().parent().children('#goodsname').val();
+            var username = $(this).parent().parent().parent().children('#username').val();
+            $.ajax({
+                type: "post",
+                url: "{:url('member/comment')}",
+                data:{'content':content, 'order':order, 'headimg':headimg, 'wid':wid, "goodsname":goodsname, "username":username},
+                dataType: 'json',
+                success:function (data) {
+                    if(data == 1){
+                        alert("评论成功！");
+                        window.location.reload();
+                    }else{
+                        alert('评论失败！');
+                        window.location.reload();
+                    }
+                }
+            })
+        })
+
+        $('.cuicu').click(function () {
+            alert('请联系在线工作人员发货！');
+            return false;
+        })
+    </script>
+    {include file="public/footer"}

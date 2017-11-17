@@ -1,0 +1,51 @@
+<div class="uchome-info">
+    <div class="uchome-info-uimg">
+        <img src="{$mem.headimgurl}" />
+    </div>
+    <div class="uchome-info-uinfo">
+        <p>{$mem.nickname}，欢迎光临！</p>
+        <p>注册时间：<span class="red">{$user.date}</span></p>
+        <p>微信会员ID：<span class="red wid">{$user.WID}</span></p>
+        <p>积分：<span class="red qiandao">{$user.score}</span></p>
+    </div>
+</div>
+<div class="am-cf uchome-nav">
+    <ul class="am-avg-sm-5">
+        {if condition="$flag eq 1"}
+        <li class="qian"><a href="#" id="qiandao">今日签到</a></li>
+        {else/}
+        <li><a href="#">已签到</a></li>
+        {/if}
+        <li><a href="{:url('member/myuser')}">我的资料</a></li>
+        <li><a href="{:url('member/myqrcode')}">我的二维码</a></li>
+        <li><a href="{:url('member/partners')}">我的推广</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $('#qiandao').click(function () {
+        var wid = $('.wid').text();
+        $.ajax({
+            type: "post",
+            url: "{:url('member/qiandao')}",
+            data: {"wid":wid},
+            dataType: "json",
+            success:function (data) {
+                var json = eval(data);
+                var qiandao = $('.qiandao').text();
+                var jifen = parseInt(qiandao) + parseInt(json.score);
+                var content = "";
+                var score = "";
+                if(json.id == 1){
+                    $(".qiandao").empty();
+                    $(".qian").empty();
+
+                    content = '<a href="#">已签到</a>';
+                    score = jifen;
+
+                    $(".qiandao").append(score);
+                    $(".qian").append(content);
+                }
+            }
+        })
+    })
+</script>

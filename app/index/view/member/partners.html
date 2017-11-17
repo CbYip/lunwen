@@ -1,0 +1,57 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="" class="" onclick="window.history.go(-1)">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">我的推广</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="{:url('good/shopcart')}" class="">
+                <i class="am-header-icon  am-icon-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+    <!--头部导航-->
+    {include file="public/nav"}
+
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="{:url('member/index')}">首页</a></li>
+            <li>我的推广</li>
+        </ol>
+    </div>
+    <div class="am-cf cart-panel">
+        <div class="withdrawals-panel">
+            <div class="partners-title-panel">
+                <div class="partners-title-panel-title"><span class="am-fr">{$count}人</span><i class="am-icon-chevron-circle-right"></i>我的伙伴</div>
+            </div>
+            <table class="am-table am-table-striped am-table-hover comm-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>日期</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="partner" id="vo"}
+                    {volist name="parts" id="vo1"}
+                        {if condition="$vo.Fopenid eq $vo1.openid"}
+                        <tr>
+                            <td><?php echo $i;?></td>
+                            <td>{$vo1.nickname}</td>
+                            <td>{$vo.Etime}</td>
+                        </tr>
+                        {/if}
+                    {/volist}
+                {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{include file="public/footer"}

@@ -1,0 +1,169 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        商品订单详情
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="#" class="am-icon-home">首页</a></li>
+        <li class="am-active">商品订单详情</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="portlet-title">
+            <div class="caption font-green bold">
+                <span class="am-icon-code"></span> 表单
+            </div>
+        </div>
+        <div class="tpl-block ">
+            <div class="am-g tpl-amazeui-form">
+                <div class="am-u-sm-12 am-u-md-9">
+                    <form class="am-form am-form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="am-form-group">
+                            <label for="goodsname" class="am-u-sm-3 am-form-label">商品名 / goods_name</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="goodsname" name="goodsname" value="{$shoporder.goodsname}">
+                                <small>提示：如果多商品的订单，商品名称以英文的","作为分隔符，以下的属性也是如此。</small>
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="num" class="am-u-sm-3 am-form-label">数量 / goods_num</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="num" name="num" value="{$shoporder.num}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="Score" class="am-u-sm-3 am-form-label">积分 / Score</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="Score" name="score" value="{$shoporder.score}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="total" class="am-u-sm-3 am-form-label">总价 / Total</label>
+                            <div class="am-u-sm-9">
+                                <input type="text"  id="total" name="total" value="{$shoporder.total}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="freight" class="am-u-sm-3 am-form-label">运费 / Freight</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="freight" name="freight" value="{$shoporder.yunfei}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="flag" class="am-u-sm-3 am-form-label">订单状态 / Flag</label>
+                            <div class="am-u-sm-9">
+                                <select id="doc-select-1" name="flag">
+                                    {if condition="$shoporder.flag eq 0"}
+                                    <option value="0" selected>未付款</option>
+                                    <option value="1">已付款</option>
+                                    {else/}
+                                    <option value="0">未付款</option>
+                                    <option value="1" selected>已付款</option>
+                                    {/if}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="Shopflag" class="am-u-sm-3 am-form-label">商品状态 / Shopflag</label>
+                            <div class="am-u-sm-9">
+                                <select id="doc-select-2" name="shopflag">
+                                    {if condition="$shoporder.shopflag eq 0"}
+                                    <option value="0" selected>未发货</option>
+                                    <option value="1">已发货</option>
+                                    <option value="1">已收货</option>
+                                    {elseif condition="$shoporder.shopflag eq 1"/}
+                                    <option value="0">未发货</option>
+                                    <option value="1" selected>已发货</option>
+                                    <option value="2">已收货</option>
+                                    {else/}
+                                    <option value="0" selected>未发货</option>
+                                    <option value="1">已发货</option>
+                                    <option value="1">已收货</option>
+                                    {/if}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="Ordernumber" class="am-u-sm-3 am-form-label">订单编号 / Ordernumber</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="ordernumber" name="ordernumber" value="{$shoporder.ordernumber}" readonly>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="time" class="am-u-sm-3 am-form-label">订单日期 / Time</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="time" name="time" value="{$shoporder.time}" readonly>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="addname" class="am-u-sm-3 am-form-label">收货人 / Addname</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="addname" name="addname" value="{$shoporder.addname}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="addtel" class="am-u-sm-3 am-form-label">联系方式 / Addtel</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="addtel" name="addtel" value="{$shoporder.addtel}">
+                        </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="detail" class="am-u-sm-3 am-form-label">省市区 / Address</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="addcity" name="addcity" value="{$shoporder.addcity}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="addcitydetail" class="am-u-sm-3 am-form-label">详细地址 / Address</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="addcitydetail" name="addcitydetail" value="{$shoporder.addcitydetail}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="Size" class="am-u-sm-3 am-form-label">尺寸 / Size</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="Size" name="size" value="{$shoporder.size}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="color" class="am-u-sm-3 am-form-label">颜色 / Color</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="color" name="color" value="{$shoporder.color}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="wuliu" class="am-u-sm-3 am-form-label">期望物流 / Expect logistics</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" class="wuliu" name="wuliu" value="{$shoporder.wuliu}" />
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="wu" class="am-u-sm-3 am-form-label">发货物流 / Delivery logistics</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" class="photo" name="wu"  value="{$shoporder.wu}" />
+                                <small>填写相应的物流信息，再点击列表页的发货按钮。</small>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="wuliunum" class="am-u-sm-3 am-form-label">物流编号 / Tracking number</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" class="wuliunum" name="wuliunum" value="{$shoporder.wuliunum}" />
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                                <button type="button" class="am-btn am-btn-warning" onclick="window.history.go(-1)">返&nbsp;&nbsp;回</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}

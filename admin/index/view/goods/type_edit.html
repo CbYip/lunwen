@@ -1,0 +1,50 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        商品分类详情
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="/admin.php" class="am-icon-home">首页</a></li>
+        <li class="am-active">分类详情</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="tpl-block ">
+            <div class="am-g tpl-amazeui-form">
+                <div class="am-u-sm-12 am-u-md-9">
+                    <form class="am-form am-form-horizontal" method="post">
+                        <div class="am-form-group">
+                            <label for="typename" class="am-u-sm-3 am-form-label">分类名 / typeNames</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" class="typename" name="typename" value="{$type.typename}">
+                            </div>
+                        </div>
+                        <div class="am-form-group" id="type">
+                            <label for="typeClassic" class="am-u-sm-3 am-form-label">所属分类 / typeClassic</label>
+                            <div class="am-u-sm-9">
+                                <select id="doc-select-1" name="type">
+                                    {if condition="$type.pid eq 0"}
+                                    <option value="0">一级分类</option>
+                                    {/if}
+                                    {volist name="class" id="vo"}
+                                        {if condition="$type.pid eq $vo.ID"}
+                                        <option value="{$vo.ID}" selected>{$vo.typename}</option>
+                                        {else/}
+                                        <option value="{$vo.ID}">{$vo.typename}</option>
+                                        {/if}
+                                    {/volist}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}

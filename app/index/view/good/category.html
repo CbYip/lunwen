@@ -1,0 +1,139 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav am-dropdown"  data-am-dropdown>
+            <a href="javascript:;" class="am-dropdown-toggle"  data-am-dropdown-toggle>
+                <i class="am-header-icon am-icon-th-large"></i>
+            </a>
+            {include file="public/header_nav"}
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">商品分类</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="{:url('good/shopcart')}" class="">
+                <i class="am-header-icon  am-icon-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="gray-panel">
+        <div class="my-search-title-panel">
+            <div class="am-input-group">
+                <input type="text" class="am-form-field am-radius" id="text">
+                <span class="am-input-group-btn">
+                <button class="am-btn am-radius" type="button" id="btn"><span class="am-icon-search"></span></button>
+              </span>
+            </div>
+        </div>
+    </div>
+    <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{"multiple": true}'>
+        {volist name="pcate" id="vo"}
+        <dl class="am-accordion-item">
+            <dt class="am-accordion-title">{$vo.typename}</dt>
+            <dd class="am-accordion-bd am-collapse ">
+                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                <div class="am-accordion-content">
+                    <dl class="my-category-dl">
+                        {volist name="scate" id="vo1"}
+                        <dd>
+                            <a href="#" class="type">{$vo1.typename}</a>
+                            <input type="hidden" class="id" value="{$vo1.ID}" />
+                        </dd>
+                        {/volist}
+                    </dl>
+                </div>
+            </dd>
+        </dl>
+        {/volist}
+    </section>
+    <div class="am-cf am-g store-background">
+        <ul class="am-avg-sm-2 my-shop-product-list">
+        </ul>
+    </div>
+    <div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
+        <a href="#top" title="">
+            <img class="am-gotop-icon-custom" src="__IMG__/default/goTop.gif" />
+        </a>
+    </div>
+    <script type="text/javascript">
+        //商品分类查询
+        $(".type").click(function () {
+            var id = $(this).parent().children('.id').val();
+            $.ajax({
+               type: "post",
+               url: "{:url('good/category')}",
+               data: {"id":id},
+               dataType: "json",
+               success:function (data) {
+                   $(".my-shop-product-list").empty();
+                   var json = eval(data);
+                   var content = "";
+                   for(var i = 0;i<json.length;i++){
+                       var result = json[i];
+                       var str = '{:url(\'good/detail\')}';
+                       var url = str + '?id=' + result.ID;
+                       content += '<li>\n' +
+                           '                   <div class="am-panel am-panel-default">\n' +
+                           '                        <div class="am-panel-bd">\n' +
+                           '                            <img class="am-img-responsive img" src="' + result.photo + '" style="width: 170px; height: 200px;"/>\n' +
+                           '                            <h3><a href="{:url(\'good/detail\', [\'id\' => $vo.ID])}">' + result.goodsname + '</a></h3>\n' +
+                           '                            <div>\n' +
+                           '                                <span class="list-product-price-span2">￥' + result.goodsprice + '</span>\n' +
+                           '                                <span class="list-product-sorce-span">销量<br/>' + result.sales + '</span>\n' +
+                           '                            </div>\n' +
+                           '                            <hr data-am-widget="divider" style="" class="am-divider am-divider-default am-cf"/>\n' +
+                           '                            <ol class="am-avg-sm-2 product-list-share">\n' +
+                           '                                <li class="am-text-sm">积分：' + result.score + '</li>\n' +
+                           '                                <li><button class="am-btn am-btn-danger am-btn-xs index-addcart-btn" onClick="window.location.href=\' ' + url + ' \'">立即购买</button></li>\n' +
+                           '                            </ol>\n' +
+                           '                        </div>\n' +
+                           '                    </div>\n' +
+                           '                </li>';
+                   }
+                   $(".my-shop-product-list").append(content);
+               } 
+            });
+        })
+
+        //搜索查询
+        $("#btn").click(function () {
+            var text = $('#text').val();
+            $.ajax({
+                type: "post",
+                url: "{:url('good/search')}",
+                data: {"text": text},
+                dataType: "json",
+                success:function (data) {
+                    $(".my-shop-product-list").empty();
+                    var json = eval(data);
+                    var content = "";
+                    for(var i = 0;i<json.length;i++){
+                        var result = json[i];
+                        var str = '{:url(\'good/detail\')}';
+                        var url = str + '?id=' + result.ID;
+                        content += '<li>\n' +
+                            '                   <div class="am-panel am-panel-default">\n' +
+                            '                        <div class="am-panel-bd">\n' +
+                            '                            <img class="am-img-responsive img" src="' + result.photo + '" style="width: 170px; height: 200px;"/>\n' +
+                            '                            <h3><a href="{:url(\'good/detail\', [\'id\' => $vo.ID])}">' + result.goodsname + '</a></h3>\n' +
+                            '                            <div>\n' +
+                            '                                <span class="list-product-price-span2">￥' + result.goodsprice + '</span>\n' +
+                            '                                <span class="list-product-sorce-span">销量<br/>' + result.sales + '</span>\n' +
+                            '                            </div>\n' +
+                            '                            <hr data-am-widget="divider" style="" class="am-divider am-divider-default am-cf"/>\n' +
+                            '                            <ol class="am-avg-sm-2 product-list-share">\n' +
+                            '                                <li class="am-text-sm">积分：' + result.score + '</li>\n' +
+                            '                                <li><button class="am-btn am-btn-danger am-btn-xs index-addcart-btn" onClick="window.location.href=\' ' + url + ' \'">立即购买</button></li>\n' +
+                            '                            </ol>\n' +
+                            '                        </div>\n' +
+                            '                    </div>\n' +
+                            '                </li>';
+                    }
+                    $(".my-shop-product-list").append(content);
+                }
+            })
+        })
+    </script>
+{include file="public/footer"}

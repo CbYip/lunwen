@@ -1,0 +1,84 @@
+{include file="public/header"}
+
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">用户注册</a>
+        </h1>
+    </header>
+    <!--头部导航-->
+    <div class="uchome-info" style="text-align: center;">
+        <div class="uchome-info-uimg" style="width: 100%;">
+            <img src="{$user.headimgurl}" style="margin: 22px 0 0 0;"/>
+            <input type="hidden" id="headimg" value="{$user.headimgurl}" />
+        </div>
+    </div>
+
+    <div class="cart-panel">
+        <form class="am-form">
+            <input type="hidden" id="openid" value="{$user.openid}" />
+            <input type="hidden" id="WID" value="{$wid}" />
+            <input type="hidden" id="nickname" value="{$user.nickname}"/>
+            <input type="hidden" id="a" value="{$data.a}" />
+            <input type="hidden" id="c" value="{$data.c}" />
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-user" style="color:#329cd9"></i>
+                <input type="text" name="username" class="am-form-field  my-radius" placeholder="请输入您的姓名">
+            </div>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-envelope" style="color:#78c3ca"></i>
+                <input type="email" name="email" class="am-form-field  my-radius" placeholder="请输入邮箱号码">
+            </div>
+            <div class="am-form-group am-form-icon">
+                <i class="am-icon-phone" style="color:#f09513"></i>
+                <input type="text" name="tel" class="am-form-field  my-radius" placeholder="请输入联系电话">
+            </div>
+            <p class="am-text-center"><button type="button" class="am-btn am-btn-danger am-radius am-btn-block" id="reg">立即注册</button></p>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        $('#reg').click(function () {
+            var headimg = $('#headimg').val();
+            var openid = $('#openid').val();
+            var wid = $("#WID").val();
+            var nickname = $("#nickname").val();
+            var username = $("input[name=username]").val();
+            var email = $("input[name=email]").val();
+            var tel = $("input[name=tel]").val();
+
+            //验证中文字符
+            var pattern = /^[\u4E00-\u9FA5]{2,4}$/;
+            //验证手机号码
+            var tele = /^1[34578]\d{9}$/;
+
+            if(username == "" || pattern.test(username) == false){
+                alert("请输入您的姓名！");
+                return false;
+            }else if(tel.length != "11" || tele.test(tel) == false){
+                alert("请输入正确的手机号码！");
+                return false;
+            }else{
+                $.ajax({
+                    type: "post",
+                    url: "{:url('login/reg')}",
+                    data:{"headimg":headimg, "openid":openid, "wid":wid,"nickname":nickname,"username":username,"email":email,"tel":tel},
+                    dataType: "json",
+                    success:function (data) {
+                        var a =$("#a").val();
+                        var c =$("#c").val();
+                        if(data == 1){
+                            var str = "/index.php/index/";
+                            var url = str + c + "/" + a;
+                            window.location.href = url;
+                        }else{
+                            alert("注册失败！");
+                            return false;
+                        }
+                    }
+                })
+            }
+        })
+    </script>
+    {include file="public/footer"}

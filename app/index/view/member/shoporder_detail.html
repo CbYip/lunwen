@@ -1,0 +1,87 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="#left-link" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">订单详情</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+    {include file="public/nav"}
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="{:url('member/index')}">首页</a></li>
+            <li><a href="{:url('member/shoporder')}">商城订单</a></li>
+        </ol>
+    </div>
+    <div class="am-cf cart-panel">
+        <input type="hidden" id="order" value="{$detail.ordernumber}"/>
+        <div class="withdrawals-panel">
+            <p class="groupby-t-p"><span class="am-fr">{$detail.time}</span>订单号：{$detail.ordernumber}</p>
+            <hr  class="am-divider am-divider-default am-cf"/>
+            <div class="groupby-info-panle">
+                订单进度：
+                {if condition="$detail.shopflag eq 0"}
+                <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                    <div class="am-progress-bar am-progress-bar-danger"  style="width: 5%"></div>
+                </div>
+                {elseif condition="$detail.shopflag eq 1"/}
+                <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                    <div class="am-progress-bar am-progress-bar-danger"  style="width: 50%"></div>
+                </div>
+                {else/}
+                <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                    <div class="am-progress-bar am-progress-bar-danger"  style="width: 100%"></div>
+                </div>
+                {/if}
+                <span class="am-u-sm-4">未发货</span>
+                <span class="am-u-sm-4" style="text-align: center;">已发货</span>
+                <span class="am-u-sm-4" style="text-align: right;">已收货</span>
+                <p class="dt">总价：{$detail.total}</p>
+                <p class="dt">总积分：{$detail.score}</p>
+                <p class="dt">运费：{$detail.yunfei}</p>
+                <p class="dt">姓名：{$detail.addname}</p>
+                <p class="dt">联系方式：{$detail.addtel}</p>
+                <p class="dt">收货地址：{$detail.addcity} &nbsp; {$detail.addcitydetail}</p>
+                <p class="dt">物流：{$detail.wu}</p>
+                <p class="dt">物流编号：{$detail.wuliunum}</p>
+                {if condition="$detail.shopflag eq 1"}
+                <p id="btn"><button type="button" id="demand" class="am-btn am-btn-primary am-btn-xs am-btn-success am-radius order-detail-btn">确认收货</button></p>
+                {/if}
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#demand').click(function () {
+                var order = $('#order').val();
+                var r = confirm("是否确认收货？");
+                if(r == true){
+                    $.ajax({
+                        type: "POST",
+                        url: "{:url('good/receipt')}",
+                        data: {"order":order},
+                        dataType: "json",
+                        success:function (data) {
+                            if(data != 0){
+                                window.location.href="{:url('member/shoporder')}";
+                            }else{
+                                alert("收货失败！");
+                                return false;
+                            }
+                        }
+                    })
+                }else{
+                    return false;
+                }
+            })
+        </script>
+    </div>
+    {include file="public/footer"}

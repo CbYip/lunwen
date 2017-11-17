@@ -1,0 +1,139 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <!-- banner -->
+    <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}'>
+        <ul class="am-slides">
+            <li>
+                <img src="__IMG__/admin/a4.png">
+            </li>
+            <li>
+                <img src="__IMG__/admin/a6.png">
+            </li>
+            <li>
+                <img src="__IMG__/admin/a7.png">
+            </li>
+            <li>
+                <img src="__IMG__/admin/a8.png">
+            </li>
+        </ul>
+    </div>
+    <!-- store -->
+    <!-- search -->
+    <div class="gray-panel">
+        <div class="my-search-title-panel">
+            <div class="am-input-group">
+                <input type="text" class="am-form-field am-radius" id="text">
+                <span class="am-input-group-btn">
+                <button class="am-btn am-radius" type="button" id="btn"><span class="am-icon-search"></span></button>
+              </span>
+            </div>
+        </div>
+    </div>
+    <!-- search -->
+    <div class="am-cf am-g">
+        <ul class="am-avg-sm-2 my-shop-product-list">
+            <input type="hidden" class="num" value="{$num}" />
+            {volist name="goods" id="vo"}
+            <li onclick="window.location.href='{:url(\'good/detail\', [\'id\' => $vo.ID])}'">
+                <div class="am-panel-default">
+                    <div class="am-panel-bd">
+                        <img class="am-img-responsive img" src="{$vo.photo}" style="width: 150px; height: 150px;"/>
+                        <h3 style="text-align: center; font-size: 1.4rem;"><a href="{:url('good/detail', ['id' => $vo.ID])}">{$vo.goodsname}</a></h3>
+                    </div>
+                </div>
+            </li>
+            {/volist}
+        </ul>
+    </div>
+    <script type="text/javascript">
+        //搜索查询
+        $("#btn").click(function () {
+            var text = $('#text').val();
+            $.ajax({
+                type: "post",
+                url: "{:url('good/search')}",
+                data: {"text": text},
+                dataType: "json",
+                success:function (data) {
+                    $(".my-shop-product-list").empty();
+                    var json = eval(data);
+                    var content = "";
+                    for(var i = 0;i<json.length;i++){
+                        var result = json[i];
+                        var str = '{:url(\'good/detail\')}';
+                        var url = str + '?id=' + result.ID;
+                        content += '<li onclick="window.location.href=\' '+ url +'\'">\n' +
+                            '                <div class="am-panel-default">\n' +
+                            '                    <div class="am-panel-bd">\n' +
+                            '                        <img class="am-img-responsive img" src="' + result.photo + '" style="width: 150px; height: 150px;"/>\n' +
+                            '                        <h3 style="text-align: center; font-size: 1.4rem;"><a href="{:url(\'good/detail\', [\'id\' => $vo.ID])}">' + result.goodsname + '</a></h3>\n' +
+                            '                    </div>\n' +
+                            '                </div>\n' +
+                            '       </li>'
+                    }
+                    $(".my-shop-product-list").append(content);
+                }
+            })
+        })
+    </script>
+    <!--上拉加载 下拉刷新-->
+    <script src="__JS__/dropload.min.js"></script>
+    <script type="text/javascript">
+        // dropload
+        $('.am-g').dropload({
+            scrollArea: window,
+            loadDownFn: function (me) {
+                // 拼接HTML
+                var num = $(".num").val();
+                var content = '';
+                $.ajax({
+                    type: 'post',
+                    url: "{:url('index/page')}",
+                    data: {"num":num},
+                    dataType: 'json',
+                    success: function (data) {
+                        var json = eval(data);
+                        if (json.length > 0 && json.length < 6) {
+                            for (var i = 0; i < json.length; i++) {
+                                var result = json[i];
+                                var str = '{:url(\'good/detail\')}';
+                                var url = str + '?id=' + result.ID;
+                                content += '<li onclick="window.location.href=\' '+ url +'\'">\n' +
+                                    '                <div class="am-panel-default">\n' +
+                                    '                    <div class="am-panel-bd">\n' +
+                                    '                        <img class="am-img-responsive img" src="' + result.photo + '" style="width: 150px; height: 150px;"/>\n' +
+                                    '                        <h3 style="text-align: center; font-size: 1.4rem;"><a href="{:url(\'good/detail\', [\'id\' => $vo.ID])}">' + result.goodsname + '</a></h3>\n' +
+                                    '                    </div>\n' +
+                                    '                </div>\n' +
+                                    '       </li>'
+                            }
+                            // 如果没有数据
+                        } else {
+                            // 锁定
+                            me.lock();
+                            // 无数据
+                            me.noData();
+                        }
+                        // 为了测试，延迟1秒加载
+                        setTimeout(function () {
+                            //更改记录值
+                            var num = $(".num").val();
+                            num = num + json.length;
+                            $(".num").val(num);
+                            // 插入数据到页面，放到最后面
+                            $('.my-shop-product-list').append(content);
+                            // 每次数据插入，必须重置
+                            me.resetload();
+                        }, 1000);
+                    },
+                    error: function (xhr, type) {
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    </script>
+{include file="public/footer"}

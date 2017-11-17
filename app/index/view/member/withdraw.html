@@ -1,0 +1,73 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="#left-link" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">会员中心</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="#right-link" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+    <!--头部导航-->
+    <div class="am-cf uchome-nav">
+        <ul class="am-avg-sm-5">
+            <li><a href="#">今日签到</a></li>
+            <li><a href="#">我的资料</a></li>
+            <li><a href="#">我的二维码</a></li>
+            <li><a href="#">升级为商家</a></li>
+            <li><a href="#">我的伙伴</a></li>
+        </ul>
+    </div>
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">提现</a></li>
+        </ol>
+    </div>
+
+    <div class="cart-panel">
+        <h3>提现</h3>
+        <div class="withdrawals-panel"><span class="am-fr"><a class="am-text-success" href="#"><span class="am-fr am-icon-chevron-right"></span>银行卡</a></span>请管理您的收款银行，以便提现</div>
+        <div class="withdrawals-panel">
+            <p><span class="am-fr red2 bold">￥8888</span>账户余额（能提现金额）</p>
+            <p><span class="am-fr red2 bold">￥8888</span>冻结的佣金（订单未完成）</p>
+            <hr  class="am-divider am-divider-default" />
+            <p class="am-text-center"><button type="button" class="am-btn am-btn-danger am-round">申请提现</button></p>
+        </div>
+        <h3>提现记录</h3>
+        <div class="withdrawals-panel">
+            <table class="am-table am-table-striped am-table-hover comm-table">
+                <thead>
+                <tr>
+                    <th>订单</th>
+                    <th>日期</th>
+                    <th>金额</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>20150607111</td>
+                    <td>2015-06-07</td>
+                    <td>￥300.00</td>
+                    <td>已成功</td>
+                </tr>
+                <tr>
+                    <td>20150607110</td>
+                    <td>2015-06-06</td>
+                    <td>￥300.00</td>
+                    <td>待审核</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{include file="public/footer"}

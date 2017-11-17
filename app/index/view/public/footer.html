@@ -1,0 +1,68 @@
+<footer data-am-widget="footer" class="am-footer am-footer-default" data-am-footer="{  }">
+    <hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>
+    <div class="am-footer-miscs ">
+        <p>CopyRight©2017 易起论文网.</p>
+        <p>浙ICP备17053202</p>
+    </div>
+</footer>
+<!--底部-->
+<div data-am-widget="navbar" class="am-navbar am-cf my-nav-footer " id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4 my-footer-ul">
+        <li>
+            <a href="{:url('index/shop')}" class="">
+                <span class="am-icon-home"></span>
+                <span class="am-navbar-label">首页</span>
+            </a>
+        </li>
+        <li>
+            <a href="{:url('member/myorder')}" class="">
+                <span class="am-icon-clipboard"></span>
+                <span class="am-navbar-label">订单</span>
+            </a>
+        </li>
+        <li>
+            <a href="{:url('good/shopcart')}" class="">
+                <span class="am-icon-shopping-cart"></span>
+                <span class="am-navbar-label">购物车</span>
+            </a>
+        </li>
+        <li>
+            <a href="{:url('member/index')}" onClick="showFooterNav();" class="">
+                <span class="am-icon-user"></span>
+                <span class="am-navbar-label">我的</span>
+            </a>
+        </li>
+    </ul>
+    <script>
+        function showFooterNav() {
+            $("#footNav").toggle();
+        }
+    </script>
+</div>
+</div>
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/amazeui.datetimepicker.min.js"></script>
+<script src="__JS__/amazeui.datetimepicker.zh-CN.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+    $('.am-form').on('click','#datetimepicker', function () {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var day = date.getDate();
+        var now = year + "-" + month + "-" + day;
+        $('#datetimepicker').datetimepicker({
+            format: 'yyyy-mm-dd',
+            minView: '2',
+            viewSelect: '2',
+            language: 'zh-CN',
+            todayBtn: true,
+            startDate: now,
+            autoclose: true,
+        });
+        $('#datetimepicker').datetimepicker('show');
+    })
+</script>
+
+</body>
+</html>

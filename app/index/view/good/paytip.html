@@ -1,0 +1,43 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="#left-link" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">信息提示页面</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="#right-link" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="gray-panel">
+        <div class="paoduct-title-panel">
+            <h2 class="checkout-h2"><i class="am-icon-lightbulb-o am-text-danger"></i> 提示标题</h2>
+            <div class="cart-list-panel">
+                <p>提示内容：您已经成功付款！请到个人中心查看订单的进度。</p>
+            </div>
+            <div>
+                <ul class="am-avg-sm-2 am-text-center">
+                    <li class="am-text-center am-padding-sm"><button type="button" class="am-btn am-btn-danger am-btn-block am-radius am-btn-sm cor">确定</button></li>
+                    <li class="am-text-center am-padding-sm"><button type="button" class="am-btn am-btn-success am-btn-block am-radius am-btn-sm leave">离开</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.cor').click(function () {
+            window.location.href="{:url('member/index')}";
+        })
+
+        $('.leave').click(function(){
+            window.location.href="{:url('index/shop')}";
+        })
+    </script>
+    {include file="public/footer"}

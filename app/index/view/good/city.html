@@ -1,0 +1,151 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="#left-link" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">选择城市</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="#right-link" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="gray-panel">
+        <div class="my-search-title-panel">定位城市：<i class="am-icon-crosshairs"></i> <span id="myarea">广州市</span></div>
+        <script>
+            $(function() {
+                var geolocation = new $.AMUI.Geolocation();
+                var $myarea = $('#myarea');
+                geolocation.get({timeout: 7000}).then(function(position){
+                    // console.log(position.coords);
+                    var contentString = '你的位置：\n\t纬度 ' + position.coords.latitude +
+                        '，\n\t经度 ' + position.coords.longitude + '，\n\t精确度 ' +
+                        position.coords.accuracy;
+                    $myarea.html(contentString);
+                }, function(err) {
+                    $myarea.html('获取地理位置时发生错误，错误信息：<br>' + err);
+                });
+            });
+        </script>
+        <div class="my-search-title-panel">
+            <p class="my-search-titp-p">热门城市</p>
+            <hr data-am-widget="divider" style="" class="am-divider-default am-margin-bottom-sm"/>
+            <table class="am-table am-table-bordered am-margin-bottom-xs">
+                <tr>
+                    <td width="25%">北京</td>
+                    <td width="25%">上海</td>
+                    <td width="25%">广州</td>
+                    <td width="25%">深圳</td>
+                </tr>
+                <tr>
+                    <td>天津</td>
+                    <td>西安</td>
+                    <td>重庆</td>
+                    <td>杭州</td>
+                </tr>
+                <tr>
+                    <td>南京</td>
+                    <td>武汉</td>
+                    <td>成都</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="my-search-title-panel">
+            <p class="my-search-titp-p">全部城市</p>
+            <hr data-am-widget="divider" style="" class="am-divider-default am-margin-bottom-sm"/>
+            <table class="am-table am-table-bordered am-margin-bottom-xs letter-table">
+                <tr>
+                    <td width="20%"><a href="#">A</a></td>
+                    <td width="20%"><a href="#">B</a></td>
+                    <td width="20%"><a href="#">C</a></td>
+                    <td width="20%"><a href="#">D</a></td>
+                    <td width="20%"><a href="#">E</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">F</a></td>
+                    <td><a href="#">G</a></td>
+                    <td><a href="#">H</a></td>
+                    <td><a href="#">I</a></td>
+                    <td><a href="#">J</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">K</a></td>
+                    <td><a href="#">L</a></td>
+                    <td><a href="#">N</a></td>
+                    <td><a href="#">M</a></td>
+                    <td><a href="#">O</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">O</a></td>
+                    <td><a href="#">Q</a></td>
+                    <td><a href="#">R</a></td>
+                    <td><a href="#">S</a></td>
+                    <td><a href="#">T</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">U</a></td>
+                    <td><a href="#">V</a></td>
+                    <td><a href="#">W</a></td>
+                    <td><a href="#">X</a></td>
+                    <td><a href="#">Y</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">Z</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="my-search-title-panel">
+            <ul class="city-ul">
+                <li class="letter">A</li>
+                <li><a href="#">鞍山</a></li>
+                <li><a href="#">安庆</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">更多...</a></li>
+            </ul>
+            <ul class="city-ul">
+                <li class="letter">B</li>
+                <li><a href="#">鞍山</a></li>
+                <li><a href="#">安庆</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">安阳</a></li>
+                <li><a href="#">更多...</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
+        <a href="#top" title="">
+            <img class="am-gotop-icon-custom" src="__IMG__/default/goTop.gif" />
+        </a>
+    </div>
+{include file="public/footer"}

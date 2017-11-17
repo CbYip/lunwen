@@ -1,0 +1,80 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        管理员资料设置
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="/admin.php" class="am-icon-home">首页</a></li>
+        <li class="am-active">管理员资料</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="portlet-title">
+            <div class="caption font-green bold">
+                <span class="am-icon-code"></span> 表单
+            </div>
+        </div>
+        <div class="tpl-block">
+            <div class="am-g">
+                <div class="tpl-form-body tpl-form-line">
+                    <form class="am-form tpl-form-line-form" method="post" enctype="multipart/form-data">
+                        <input type="hidden" id="id" value="{$data.ID}"/>
+                        <div class="am-form-group">
+                            <label for="name" class="am-u-sm-3 am-form-label">帐号 <span class="tpl-form-line-small-title">Acount</span></label>
+                            <div class="am-u-sm-4">
+                                <input type="text" class="tpl-form-input" id="name" value="{$data.acount}" readonly>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="password" class="am-u-sm-3 am-form-label">密码 <span class="tpl-form-line-small-title">Password</span></label>
+                            <div class="am-u-sm-4">
+                                <input type="text" class="tpl-form-input" id="password" placeholder="不修改密码请留空">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="email" class="am-u-sm-3 am-form-label">邮箱 <span class="tpl-form-line-small-title">Email</span></label>
+                            <div class="am-u-sm-4">
+                                <input type="email" class="tpl-form-input" id="email" value="{$data.email}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="time" class="am-u-sm-3 am-form-label">创建时间 <span class="tpl-form-line-small-title">Time</span></label>
+                            <div class="am-u-sm-4">
+                                <input type="text" class="am-form-field tpl-form-no-bg" id="time" placeholder="{$data.time}" data-am-datepicker="" readonly/>
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success " id="btn">保存修改提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#btn').click(function () {
+        var id = $('#id').val();
+        var password = $('#password').val();
+        var email = $('#email').val();
+
+        $.ajax({
+            type: "post",
+            url: "{:url('index/admin')}",
+            data: {"id":id, "password":password, "email":email},
+            success:function (data) {
+                if(data != 0){
+                    alert("修改成功!");
+                    window.location.href="{:url('index/index')}";
+                }else{
+                    alert("您没有进行修改，即将跳转回首页！");
+                    window.location.href="{:url('index/index')}";
+                }
+            }
+        })
+    })
+</script>
+{include file="public/footer"}

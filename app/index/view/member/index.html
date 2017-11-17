@@ -1,0 +1,36 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav am-dropdown"  data-am-dropdown>
+            <a href="javascript:;" class="am-dropdown-toggle"  data-am-dropdown-toggle>
+                <i class="am-header-icon am-icon-th-large"></i>
+            </a>
+            <div style="display:none">
+
+            </div>
+            {include file="public/header_nav"}
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">个人中心</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="{:url('good/shopcart')}" class="">
+                <i class="am-header-icon  am-icon-shopping-cart"></i>
+            </a>
+        </div>
+    </header>
+    <!--头部导航-->
+    {include file="public/nav"}
+
+    <div class="am-cf uchome-apps">
+        <ul class="am-avg-sm-3 uchome-apps-ul">
+            <li><a href="{:url('member/myorder')}"><p class="imgp"><img src="__IMG__/default/uhomeapp1.png" class="am-img-responsive" /></p><p class="namep">论文订单</p><p class="lastp">{$data.myorder}笔</p></a></li>
+            <!--<li><a href="{:url('member/order_accept')}"><p class="imgp"><img src="__IMG__/default/uhomeapp2.png" class="am-img-responsive" /></p><p class="namep">我接订单</p><p class="lastp">{$data.accept}笔</p></a></li>-->
+            <li><a href="{:url('member/shoporder')}"><p class="imgp"><img src="__IMG__/default/uhomeapp3.png" class="am-img-responsive" /></p><p class="namep">商城订单</p><p class="lastp">{$data.shoporder}笔</p></a></li>
+            <li><a href="{:url('good/shopcart')}"><p class="imgp"><img src="__IMG__/default/uhomeapp4.png" class="am-img-responsive" /></p><p class="namep">购物车</p><p class="lastp">{$data.shopcart}件</p></a></li>
+            <li><a href="{:url('member/partners')}"><p class="imgp"><img src="__IMG__/default/uhomeapp11.png" class="am-img-responsive" /></p><p class="namep">我的推广</p><p class="lastp">{$data.extend}位</p></a></li>
+            <!--<li><a href="{:url('member/messagelist')}"><p class="imgp"><img src="__IMG__/default/uhomeapp6.png" class="am-img-responsive" /></p><p class="namep">账户余额</p><p class="lastp">0元</p></a></li>-->
+        </ul>
+    </div>
+{include file="public/footer"}

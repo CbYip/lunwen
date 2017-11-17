@@ -1,0 +1,208 @@
+{include file="public/header"}
+<body>
+<div class="container">
+    <header data-am-widget="header" class="am-header am-header-default my-header">
+        <div class="am-header-left am-header-nav">
+            <a href="javascript:;" onclick="window.history.go(-1)" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">我的订单</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon  am-icon-home"></i>
+            </a>
+        </div>
+    </header>
+    {include file="public/nav"}
+    <div class="my-nav-bar">
+        <ol class="am-breadcrumb">
+            <li><a href="{:url('member/index')}">首页</a></li>
+            <li><a href="{:url('member/myorder')}">我的订单</a></li>
+        </ol>
+    </div>
+    <div class="am-cf cart-panel">
+        <input type="hidden" id="ID" value="{$detail.ID}"/>
+        <div class="withdrawals-panel">
+            <p class="groupby-t-p"><span class="am-fr">{$detail.ftime}</span>订单号：{$detail.order}</p>
+            <hr  class="am-divider am-divider-default am-cf"/>
+            <div class="groupby-info-panle">
+                {if condition="($detail.service eq 1) or ($detail.service eq 3)"}
+                    项目进度：
+                    {if condition="$detail.complete eq 0"}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 5%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 1"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 25%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 2"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 50%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 3"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 75%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 4"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 100%"></div>
+                    </div>
+                    {/if}
+                    <span class="am-u-sm-4">项目准备</span>
+                    <span class="am-u-sm-4" style="text-align: center;">完成初稿</span>
+                    <span class="am-u-sm-4" style="text-align: right;">项目完成</span>
+                {elseif condition="$detail.service eq 2"}
+                    项目进度：
+                    {if condition="$detail.complete eq 0"}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 5%"></div>
+                    </div>
+                    {elseif condition="($detail.complete eq 1) or ($detail.complete eq 5) or ($detail.complete eq 6)"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 50%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 2"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 65%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 3"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 80%"></div>
+                </div>
+                    {elseif condition="$detail.complete eq 4"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 100%"></div>
+                    </div>
+                    {/if}
+                    <span class="am-u-sm-4">稿件未送审</span>
+                    <span class="am-u-sm-4" style="text-align: center;">稿件送审中</span>
+                    <span class="am-u-sm-4" style="text-align: right;">已出刊</span>
+                {else/}
+                项目进度：
+                    {if condition="$detail.complete eq 0"}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 5%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 1"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 25%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 2"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 50%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 3"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 65%"></div>
+                    </div>
+                    {elseif condition="($detail.complete eq 4) or ($detail.complete eq 5)"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 80%"></div>
+                    </div>
+                    {elseif condition="$detail.complete eq 6"/}
+                    <div class="am-progress am-progress-striped am-progress-sm am-active ">
+                        <div class="am-progress-bar am-progress-bar-danger"  style="width: 100%"></div>
+                    </div>
+                    {/if}
+                    <span class="am-u-sm-4">项目未开工</span>
+                    <span class="am-u-sm-4" style="text-align: center;">稿件完成</span>
+                    <span class="am-u-sm-4" style="text-align: right;">已出刊</span>
+                {/if}
+                <h2>题目：{$detail.title}</h2>
+                <p class="dt">姓名：{$detail.username}</p>
+                <p class="dt">联系方式：{$detail.usertel}</p>
+                {if condition="$detail.service eq 1"}
+                    <p class="dt">订单类型：<span class="am-text-success">文稿代写</span></p>
+                    <p class="dt">文稿字数：{$detail.word}</p>
+                    <p class="dt">文稿类型：{$detail.type}</p>
+                    <p class="dt">专业方向：{$detail.major}</p>
+                    <p class="dt" id="ctime">完成时间：{$detail.ctime}</p>
+                    <p class="dt">重复率要求：{$detail.repeat}</p>
+                    <p class="dt" id="require">具体需求：{$detail.require}</p>
+                {elseif condition="$detail.service eq 2"/}
+                    <p class="dt">订单类型：<span class="am-text-success">期刊发表</span></p>
+                    <p class="dt">论文字符数：{$detail.word}</p>
+                        {if condition="$detail.level eq 0"}
+                        <p class="dt">期刊级别：省级期刊</p>
+                        {elseif condition="$detail.level eq 1"/}
+                        <p class="dt">期刊级别：国家级级期刊</p>
+                        {elseif condition="$detail.level eq 2"/}
+                        <p class="dt">期刊级别：科技核心期刊</p>
+                        {elseif condition="$detail.level eq 3"/}
+                        <p class="dt">期刊级别：中文核心期刊</p>
+                        {elseif condition="$detail.level eq 4"/}
+                        <p class="dt">期刊级别：cssci核心期刊</p>
+                        {elseif condition="$detail.level eq 5"/}
+                        <p class="dt">期刊级别：EI/SCI期刊</p>
+                        {else/}
+                        <p class="dt">期刊级别：暂不确定</p>
+                        {/if}
+                    <p class="dt" id="ctime">发表日期：{$detail.fatime}</p>
+                    <p class="dt" id="require">其他要求：{$detail.require}</p>
+                {elseif condition="$detail.service eq 3"/}
+                    <p class="dt">订单类型：<span class="am-text-success">论文修改</span></p>
+                    <p class="dt">论文字数：{$detail.word}</p>
+                    <p class="dt" id="ctime">完成时间：{$detail.ctime}</p>
+                        {if condition="$detail.modify eq 0"}
+                        <p class="dt">修改类型：按意见修改内容</p>
+                        {elseif condition="$detail.modify eq 1"}
+                        <p class="dt">修改类型：降低论文重复率</p>
+                        <p class="dt">当前重复率：{$detail.nowrep}</p>
+                        <p class="dt">修改后重复率：{$detail.repeat}</p>
+                        {elseif condition="$detail.modify eq 2"/}
+                        <p class="dt">修改类型：修改论文格式</p>
+                        {elseif condition="$detail.modify eq 3"/}
+                        <p class="dt">修改类型：整体润色格式</p>
+                        {else/}
+                        <p class="dt">修改类型：其他修改</p>
+                        {/if}
+                    <p class="dt" id="require">修改意见：{$detail.require}</p>
+                {else/}
+                    <p class="dt">订单类型：<span class="am-text-success">包写包发</span></p>
+                    <p class="dt">论文字数：{$detail.word}</p>
+                    <p class="dt" id="ctime">发表时间：{$detail.ctime}</p>
+                    <p class="dt" id="require">具体需求：{$detail.require}</p>
+                {/if}
+                <p id="btn"><button type="button" id="demand" class="am-btn am-btn-primary am-btn-xs am-btn-danger am-radius order-detail-btn">需求修改</button></p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#demand').click(function () {
+                var text = $('#require').text();
+                var require = text.substr(0,5);
+                var req = text.substr(5);
+                var content = "";
+                var btn = "";
+                content = "<p class='dt'>" + require + "<textarea style='width: 75%'  rows=\"5\" id='req'>" + req + "</textarea></p>";
+                btn += "<button type=\"button\" id=\"sub\" class=\"am-btn am-btn-primary am-btn-xs am-btn-danger am-radius order-detail-btn\">提交</button>";
+                btn += "<button type=\"button\" id=\"reset\" class=\"am-btn am-btn-primary am-btn-xs am-btn-success am-radius order-detail-btn\" style='margin-left: 1%;' onclick='window.location.reload()'>取消</button>";
+                $('#require').remove();
+                $('#demand').remove();
+                $('#ctime').append(content);
+                $('#btn').append(btn);
+            })
+        </script>
+        <script type="text/javascript">
+            $('#btn').on('click','#sub', function () {
+                var content = $('#req').val();
+                var id = $('#ID').val();
+                $.ajax({
+                    type: "POST",
+                    url: "{:url('member/order_detail')}",
+                    data: {"content":content, "id":id},
+                    dataType: "json",
+                    success: function (data) {
+                        if(data == 1){
+                            window.location.reload();
+                            return ;
+                        }
+                    }
+                })
+            });
+        </script>
+    </div>
+    {include file="public/footer"}

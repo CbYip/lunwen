@@ -1,0 +1,84 @@
+{include file="public/header"}
+{include file="public/left"}
+<div class="tpl-content-wrapper">
+    <div class="tpl-content-page-title">
+        用户管理详情
+    </div>
+    <ol class="am-breadcrumb">
+        <li><a href="#" class="am-icon-home">首页</a></li>
+        <li class="am-active">用户管理详情</li>
+    </ol>
+    <div class="tpl-portlet-components">
+        <div class="portlet-title">
+            <div class="caption font-green bold">
+                <span class="am-icon-code"></span> 表单
+            </div>
+        </div>
+        <div class="tpl-block ">
+            <div class="am-g tpl-amazeui-form">
+                <div class="am-u-sm-12 am-u-md-9">
+                    <form class="am-form am-form-horizontal" method="post" enctype="multipart/form-data">
+                        <div class="am-form-group">
+                            <label for="name" class="am-u-sm-3 am-form-label">注册名 / Name</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="name" name="name" value="{$user.name}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="WID" class="am-u-sm-3 am-form-label">微信会员ID / WID</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="WID" name="WID" value="{$user.WID}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="nickname" class="am-u-sm-3 am-form-label">注册微信名 / Nickame</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="nickname" name="nickname" value="{$user.nickname}">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="tel" class="am-u-sm-3 am-form-label">注册电话 / Tel</label>
+                            <div class="am-u-sm-9">
+                                <input type="text"  id="tel" name="tel" value="{$user.tel}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="balance" class="am-u-sm-3 am-form-label">余额 / Balance</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="balance" name="balance" value="{$user.balance}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="score" class="am-u-sm-3 am-form-label">积分 / Score</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="score" name="score" value="{$user.score}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="email" class="am-u-sm-3 am-form-label">注册邮箱 / Email</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="email" name="email" value="{$user.email}">
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="date" class="am-u-sm-3 am-form-label">注册时间 / Date</label>
+                            <div class="am-u-sm-9">
+                                <input type="text" id="date" name="date" value="{$user.date}" readonly>
+                            </div>
+                        </div>
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+                                <button type="button" class="am-btn am-btn-warning" onclick="window.history.go(-1)">返&nbsp;&nbsp;回</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}
